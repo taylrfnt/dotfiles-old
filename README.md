@@ -8,12 +8,10 @@ To use this repository to quickly configure a fresh OS/system, you need the foll
 * [GNU Stow](https://www.gnu.org/software/stow/)
 * A package manager for your OS (`nix`, `brew`, `pacman`, etc.)
 
-## A word on nix
-If you are using nix, the installation will differ.  A Nix config for darwin systems is also in 
-this repo, so you can just run directly with this command:
-```
-<<ADD NIX BUILD>>
-```
+### A word on Nix 
+If you are using Nix as yopur package manager, the installation will differ due to the declarative
+nature of Nix/NixOS. Refer to the Nix section for instructions on using this repo to configure a 
+fresh environment with Nix as your package manager.
 
 ### git
 **macOS**
@@ -35,7 +33,37 @@ brew install stow
 pacman -S stow
 ```
 
-## Installation
+## Nix setup
+If you are using the Nix package manager, you will need to follow a different installation procedure
+for the required packages to leverage this repo's contents.
+
+### darwin (macOS)
+A Nix config for darwin systems is also in this repo, so setting up a clean
+macOS environment via Nix can be run with the following:
+1. Install Nix package manager ([taken from the Nix official site](https://nixos.org/download/)):
+```
+$ sh <(curl -L https://nixos.org/nix/install)
+```
+* You may need to agree/confirm to several prompts during the installation.
+2. Test your install:
+```
+$ nix-shell -p neofetch --run neofetch
+```
+3. Run `nix` to apply the configurations defined in this repo:
+```
+$ nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/dotfiles/nix#{CONFIGURATION_NAME}
+```
+4. Verify `nix-darwin` install/configuration:
+```
+$ which nix-darwin
+```
+5. If you make any further changes, you can apply the changes by running the following command:
+```
+darwin-rebuild switch
+```
+
+
+## Installation 
 1. Check out this `dotfiles` repo in your `$HOME` directory using git:
 ```
 $ git clone git@github.com/taylrfnt/dotfiles.git
