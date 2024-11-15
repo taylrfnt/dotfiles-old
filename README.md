@@ -43,5 +43,5 @@ $ stow .
 ```
 
 ## References
-Elliott at Dreams of Autonomy has a great video guide on using stow/dotfiles repo:
+Elliott at Dreams of Autonomy has a great video guide on using stow/dotfiles repo:\n
 [Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/watch?v=y6XCebnB9gs)
