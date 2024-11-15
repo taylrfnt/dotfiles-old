@@ -89,4 +89,39 @@ template = "{{ .HEAD }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end
   [tooltips.properties]
   fetch_status = true
   fetch_upstream_icon = true
+  branch_icon = " "
+
+[[tooltips]]
+type = "az"
+tips = [ "az" ]
+style = "diamond"
+foreground = "#193549"
+background = "#abc5fe"
+leading_diamond = ""
+trailing_diamond = ""
+# TODO: works for logged in, need to edit to display unknown if not logged in
+template = " {{ if .Name }} {{ .Name }}{{ else }} 󰭙 {{ end }}"
+
+  [tooltips.properties]
+  source = "cli"
+
+[[tooltips]]
+type = "kubectl"
+tips = [ "kubectl", "k" ]
+style = "diamond"
+foreground = "#193549"
+background = "#1352ab"
+leading_diamond = ""
+trailing_diamond = ""
+template = "󰠳 {{ .Context }}{{ if .Namespace }} :: {{ .Namespace }}{{ end }}"
+
+[[tooltips]]
+type = "helm"
+tips = [ "helm", "helmfile" ]
+style = "diamond"
+foreground = "#193549"
+background = "#a7cae1"
+leading_diamond = ""
+trailing_diamond = ""
+template = "Helm {{ .Version }}"
 
