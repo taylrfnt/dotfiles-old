@@ -6,10 +6,17 @@ environment on any machine.
 To use this repository to quickly configure a fresh OS/system, you need the following installed:
 * [git](https://git-scm.com/)
 * [GNU Stow](https://www.gnu.org/software/stow/)
-* A package manager for your OS (`brew`, `pacman`, etc.)
+* A package manager for your OS (`nix`, `brew`, `pacman`, etc.)
+
+## A word on nix
+If you are using nix, the installation will differ.  A Nix config for darwin systems is also in 
+this repo, so you can just run directly with this command:
+```
+<<ADD NIX BUILD>>
+```
 
 ### git
-**MacOS**
+**macOS**
 ```
 brew install git
 ```
@@ -19,7 +26,7 @@ pacman -S git
 ```
 
 ### GNU Stow
-**MacOS**
+**macOS**
 ```
 brew install stow
 ```
@@ -43,6 +50,8 @@ $ stow .
 ```
 
 ## References
+### Nix on darwin
+Elliott at Dreams of Autonomy's guide for nix-darwin is essential:
+* [Nix is my favorite package manager to use on macOS](https://www.youtube.com/watch?v=Z8BL8mdzWHI)
 Elliott at Dreams of Autonomy has a great video guide on using stow/dotfiles repo:
-
-[Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/watch?v=y6XCebnB9gs)
+* [Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/watch?v=y6XCebnB9gs)
