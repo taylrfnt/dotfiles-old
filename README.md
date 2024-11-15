@@ -33,6 +33,19 @@ brew install stow
 pacman -S stow
 ```
 
+## Packages & Apps
+This repo contains custom configuration for the following apps/packages:
+* Alacritty
+* Kitty
+* neofetch
+* NeoVim
+* ohmyposh
+* tmux
+
+The configuration files within can be installed with or without these apps/packages installed; however, it's 
+best to install them prior to any installation attempts to avoid any future headaches.  If you wish to remove 
+certain configurations, do so after cloning but prior to running the `stow` command in the installation steps. 
+
 ## Nix setup
 If you are using the Nix package manager, you will need to follow a different installation procedure
 for the required packages to leverage this repo's contents.
