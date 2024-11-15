@@ -1,0 +1,8 @@
+[commit]
+	gpgsign = true
+[core]
+	editor = code --wait
+[gpg]
+	format = ssh
+[init]
+	defaultBranch = main
