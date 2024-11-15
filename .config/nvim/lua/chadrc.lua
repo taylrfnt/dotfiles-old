@@ -14,4 +14,14 @@ M.base46 = {
 	-- },
 }
 
+M.ui = {
+  telescope ={
+    style = "bordered"
+  },
+
+  statusline = {
+    theme = "vscode_colored",
+  }
+}
+
 return M
