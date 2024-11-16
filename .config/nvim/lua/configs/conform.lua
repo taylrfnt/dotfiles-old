@@ -2,14 +2,14 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" }, -- Lua formatting with Stylua
     go = { "gofumpt" }, -- Go formatting with Gofumpt
-    json = { "prettier" }, -- JSON formatting with Prettier
+    json = { "prettier", "jq", stop_after_first = true }, -- JSON formatting with Prettier
     css = { "prettier" },
     html = { "prettier" },
-    yaml = { "yamlfix" },
+    yaml = { "yamlfmt", "yamlfix" },
     java = { "uncrustify" },
-    bash = { "shellcheck" },
-    zsh = { "shellcheck "},
-    ksh = { "shellcheck" }
+    bash = { "shellcheck", "bash-langauge-server" },
+    zsh = { "shellcheck " },
+    ksh = { "shellcheck" },
   },
 
   format_on_save = {
@@ -51,3 +51,4 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 return options
+

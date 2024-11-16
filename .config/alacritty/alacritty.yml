@@ -23,7 +23,7 @@ window:
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
-  padding:
+padding:
     x: 4
     y: 4
 
@@ -247,3 +247,4 @@ shell:
 #   `command` must be a map containing a `program` string, and `args` array of
 #     strings. For example:
 #     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
+
