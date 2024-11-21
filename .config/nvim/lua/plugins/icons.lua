@@ -19,6 +19,11 @@ return {
             color = "#ffb58a",
             name = "Gitconfig",
           },
+          [".gitattributes"] = {
+            icon = "󰊢",
+            color = "#ffb58a",
+            name = "Gitattributes",
+          },
           [".gitconfig"] = {
             icon = "󰊢",
             color = "#ffb58a",
