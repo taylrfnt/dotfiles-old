@@ -20,15 +20,38 @@
         [ pkgs.neovim
           pkgs.stow
           pkgs.pass
-	        pkgs.kitty
 	        pkgs.oh-my-posh
 	        pkgs.pyenv
           pkgs.zsh-autosuggestions
           pkgs.mkalias
-          pkgs.obsidian
+          pkgs.yt-dlp
         ];
 
+      # Configure Homebrew
+      homebrew = {
+        enable = true;
+        casks = [
+          "firefox@nightly"
+          "iina"
+          "the-unarchiver"
+          "bitwarden"
+          "kitty"
+          "obsidian"
+        ];
+        brews = [
+          "openjdk@17"
+          "openjdk@21"
+          "mas"
+        ];
+        masApps = {
+          "Final Cut Pro" = 424389933;
+        };
+        onActivation.cleanup = "zap";
+      };
+
+      # Install nerd font
       fonts.packages = with pkgs; [
+        # more fonts via `nix repl -f nerd-fonts.`
         nerd-fonts.jetbrains-mono
       ];
 
