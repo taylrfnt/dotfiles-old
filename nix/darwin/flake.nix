@@ -47,6 +47,8 @@
           "Final Cut Pro" = 424389933;
         };
         onActivation.cleanup = "zap";
+        onActivation.autoUpdate = true;
+        onActivation.upgrade = true;
       };
 
       # Install nerd font
