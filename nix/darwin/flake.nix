@@ -5,9 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
     configuration = { pkgs, config, ... }: {
       # allow unfree app installs
@@ -72,7 +73,19 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#amaterasu
     darwinConfigurations."amaterasu" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [
+        configuration
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            # Apple Silicon Only
+            enableRosetta = true;
+            # User owning the Homebrew prefix
+            user = "taylorfont";
+          };
+        }
+      ];
     };
   };
 }
