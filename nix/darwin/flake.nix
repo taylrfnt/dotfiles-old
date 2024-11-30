@@ -106,12 +106,24 @@
             orientation = "left";
             mineffect = "scale";
             minimize-to-application = true;
+            magnification = false;
             show-recents = false; # hide recent apps from dock
             # set dock apps
-            #dock.persistent-apps = [
-            #  "/System/Applications/Finder.app"
+            #persistent-apps = [
             #  "/System/Applications/Launchpad.app"
-            #  "{pkgs.kitty}/Applications/kitty.app"
+            #  "${pkgs.firefox}/Applications/Firefox Nightly.app"
+            #  "/System/Applications/Messages.app"
+            #  "/System/Applications/FaceTime.app"
+            #  "/System/Applications/Mail.app"
+            #  "/System/Applications/Photos.app"
+            #  "/System/Applications/TV.app"
+            #  "/System/Applications/Music.app"
+            #  "/System/Applications/News.app"
+            #  "/System/Applications/App Store.app"
+            #  "${pkgs.obsidian}/Applications/Obsidian.app"
+            #  "${pkgs.kitty}/Applications/kitty.app"
+            #  "${pkgs.iina}/Applications/IINA.app"
+            #  "${pkgs.Yoink}/Applications/Yoink.app"
             #];
           };
           finder.FXPreferredViewStyle = "clmv"; # column view

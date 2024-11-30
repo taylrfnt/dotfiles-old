@@ -15,7 +15,7 @@ console_title_template = '{{.UserName}}@{{.HostName}} :: {{.PWD}}'
     style = 'plain'
     background = 'transparent'
     foreground = 'blue'
-    template = '{{ .Path }}'
+    template = '{{.UserName}}@{{.HostName}} :: {{ .Path }}'
 
     [blocks.segments.properties]
       style = 'full'
