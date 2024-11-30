@@ -18,6 +18,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ pkgs.neovim
+          pkgs.tmux
           pkgs.stow
           pkgs.pass
 	        pkgs.oh-my-posh
@@ -59,6 +60,7 @@
         ];
         masApps = {
           "Final Cut Pro" = 424389933;
+          "Yoink" = 457622435;
         };
         onActivation.cleanup = "zap";
         onActivation.autoUpdate = true;
@@ -90,6 +92,11 @@
             ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
           done
         '';
+
+      system.defaults = {
+        dock.autohide = true;
+
+      };
 
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
