@@ -30,6 +30,15 @@
           pkgs.marksman
           pkgs.gofumpt
           pkgs.prettierd
+          pkgs.yaml-language-server
+          pkgs.yamlfix
+          pkgs.yamlfmt
+          pkgs.shellcheck
+          pkgs.uncrustify
+          pkgs.bash-language-server
+          pkgs.jq
+          pkgs.stylua
+          pkgs.zsh-autosuggestons
         ];
 
       # Configure Homebrew
