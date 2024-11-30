@@ -38,7 +38,7 @@
           pkgs.bash-language-server
           pkgs.jq
           pkgs.stylua
-          pkgs.zsh-autosuggestons
+          pkgs.zsh-autosuggestions
         ];
 
       # Configure Homebrew
