@@ -10,7 +10,7 @@ M.base46 = {
   theme_toggle = { "catppuccin", "everforest" },
   hl_override = {
     Comment = { italic = true },
-    ["@comment"] = { italic = true },
+  	["@comment"] = { italic = true },
   },
 }
 
@@ -25,3 +25,4 @@ M.ui = {
 }
 
 return M
+
