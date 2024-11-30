@@ -21,7 +21,8 @@ fi
 export CLICOLOR=1
 
 ## autocomplete
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+## :: TODO :: FIX THIS FOR NIX!!
+#source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ## add shell history sharing
 setopt share_history
@@ -29,20 +30,8 @@ setopt share_history
 ############################################################################
 #                                 ALIASES                                  #
 ############################################################################
-# make vim use neovim
 alias vim=nvim
 alias k=kubectl
-
-
-############################################################################
-#                                  FEDEX                                   #
-############################################################################
-## cloudops-cli 
-export PATH="$PATH:/Users/taylor.font/cloudops-cli/current"
-alias cloudops='cloudops-cli'
-
-## cf-cli login
-export PATH="$PATH:/Users/taylor.font/cf-cli-wrapper"
 
 ############################################################################
 #                                   JAVA                                   #
@@ -61,5 +50,4 @@ export JAVA_HOME="$(brew --prefix)/opt/openjdk@${JAVA_VERSION}"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
 
