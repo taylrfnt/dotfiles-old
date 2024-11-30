@@ -43,6 +43,13 @@
           pkgs.maccy
         ];
 
+      # user setup
+      users.users.taylorfont = {
+        name = "taylorfont";
+        description = "Taylor F. User";
+        home = "/Users/taylorfont";
+      };
+
       # Configure Homebrew
       homebrew = {
         enable = true;
@@ -74,6 +81,7 @@
         nerd-fonts.jetbrains-mono
       ];
 
+      # using macos aliases instead of symlinks to allow apps to be indexed by spotlight
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
           name = "system-applications";
@@ -95,15 +103,40 @@
         '';
 
       system.defaults = {
-        dock.autohide = true;
-
+        dock = {
+          autohide = true;
+          autohide-delay = 0.0; # no delay for auto-hide/show
+          orientation = "left";
+          show-recents = false; # hide recent apps from dock
+          # set dock apps
+          #dock.persistent-apps = [
+          #  "/System/Applications/Finder.app"
+          #  "/System/Applications/Launchpad.app"
+          #  "{pkgs.kitty}/Applications/kitty.app"
+          #];
+        };
+        finder.FXPreferredViewStyle = "clmv"; # column view
+        loginwindow.GuestEnabled = false; # no guest logins
+        NSGlobalDomain.AppleICUForce24HourTime = true; # enable 24hr time
+        menuExtraClock.Show24Hour = true; # show 24 hr clock in menu/login
+        screencapture.type = "png"; # make screenshots png files
       };
 
+      # automatically catch (most) new prefs without login/restart
+      system.activationScripts.postUserActivation.text = ''
+        # Following line should allow us to avoid a logout/login cycle
+        /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+      '';
+
       # Enable alternative shell support in nix-darwin.
+      programs.zsh.enable = true; # default shell on catalina
       # programs.fish.enable = true;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
+
+      # Auto upgrade nix package and the daemon service.
+      services.nix-daemon.enable = true;
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
