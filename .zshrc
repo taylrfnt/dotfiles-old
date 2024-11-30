@@ -33,11 +33,10 @@ setopt share_history
 alias vim=nvim
 alias k=kubectl
 
-
 ############################################################################
 #                                  FEDEX                                   #
 ############################################################################
-## cloudops-cli 
+## cloudops-cli
 export PATH="$PATH:/Users/taylor.font/cloudops-cli/current"
 alias cloudops='cloudops-cli'
 
@@ -61,5 +60,4 @@ export JAVA_HOME="$(brew --prefix)/opt/openjdk@${JAVA_VERSION}"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-
 
