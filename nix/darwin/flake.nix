@@ -25,6 +25,11 @@
           pkgs.zsh-autosuggestions
           pkgs.mkalias
           pkgs.yt-dlp
+          pkgs.lua-language-server
+          pkgs.gopls
+          pkgs.marksman
+          pkgs.gofumpt
+          pkgs.prettierd
         ];
 
       # Configure Homebrew
