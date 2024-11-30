@@ -103,6 +103,9 @@
         '';
 
       system.defaults = {
+        ## TODO: Add login items for maccy ( not yet supported by nix-darwin )
+        # change default system sound to "Breeze"
+        ".GlobalPreferences"."com.apple.sound.beep.sound" = "/System/Library/Sounds/Blow.aiff";
         dock = {
           autohide = true;
           autohide-delay = 0.0; # no delay for auto-hide/show
