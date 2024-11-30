@@ -40,6 +40,7 @@
           pkgs.jq
           pkgs.stylua
           pkgs.zsh-autosuggestions
+          pkgs.maccy
         ];
 
       # Configure Homebrew
