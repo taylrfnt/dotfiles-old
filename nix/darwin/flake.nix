@@ -24,6 +24,7 @@
         [ pkgs.neovim
           pkgs.tmux
           pkgs.stow
+          pkgs.gh
           pkgs.pass
 	        pkgs.oh-my-posh
 	        pkgs.pyenv
