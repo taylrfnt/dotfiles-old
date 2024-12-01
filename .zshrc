@@ -32,6 +32,7 @@ setopt share_history
 ############################################################################
 alias vim=nvim
 alias k=kubectl
+alias yt-dlp="yt-dlp --config-location ~/.config/yt-dlp/yt-dlp.conf"
 
 ############################################################################
 #                                   JAVA                                   #
