@@ -47,6 +47,7 @@
           pkgs.zsh-autosuggestions
           pkgs.maccy
           pkgs.raycast
+          pkgs.kubectl
         ];
 
       # user setup
