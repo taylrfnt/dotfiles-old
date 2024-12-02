@@ -26,8 +26,8 @@
           pkgs.stow
           pkgs.gh
           pkgs.pass
-	        pkgs.oh-my-posh
-	        pkgs.pyenv
+          pkgs.oh-my-posh
+          pkgs.pyenv
           pkgs.zsh-autosuggestions
           pkgs.mkalias
           pkgs.yt-dlp
@@ -66,6 +66,7 @@
           "bitwarden"
           "kitty"
           "obsidian"
+          "jagex" # jagex is manual - run `open /opt/homebrew/Caskroom/jagex/1.17.3/Jagex\ Launcher\ Installer.app`
         ];
         brews = [
           "openjdk@17"
