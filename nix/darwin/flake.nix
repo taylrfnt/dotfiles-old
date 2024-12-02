@@ -61,6 +61,7 @@
         enable = true;
         casks = [
           "firefox@nightly"
+          #"google-chrome"
           "iina"
           "the-unarchiver"
           "bitwarden"
