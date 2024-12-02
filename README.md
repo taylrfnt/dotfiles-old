@@ -9,13 +9,22 @@ To use this repository to quickly configure a fresh OS/system, you need the foll
 * A package manager for your OS to install the packages these dotfiles house configuration for (`nix`, `brew`, `pacman`, etc.)
 
 ### git
-**macOS**
+**macOS (homebrew)**
 ```
 brew install git
 ```
 **Arch**
 ```
 pacman -S git
+```
+
+**NixOS (nix)**
+```
+environment.systemPackages =
+        [ pkgs.git
+          ...
+        ];
+
 ```
 
 ### GNU Stow
@@ -27,6 +36,15 @@ brew install stow
 ```
 pacman -S stow
 ```
+**NixOS (nix)**
+```
+environment.systemPackages =
+        [ pkgs.stow
+          ...
+        ];
+
+```
+
 
 ## Packages & Apps
 This repo contains custom configuration for the following apps/packages:

@@ -23,6 +23,7 @@
       environment.systemPackages =
         [ pkgs.neovim
           pkgs.tmux
+          pkgs.git
           pkgs.stow
           pkgs.gh
           pkgs.pass
