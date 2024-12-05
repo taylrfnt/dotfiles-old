@@ -15,6 +15,8 @@ in
 
   programs = {
     tmux = (import ../home/tmux.nix { inherit pkgs; });
+    git = (import ../home/git.nix { inherit config pkgs; });
+    neovim = (import ../home/neovim.nix { inherit config pkgs; });
   };
 }
 
