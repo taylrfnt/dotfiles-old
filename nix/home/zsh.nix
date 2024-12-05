@@ -9,6 +9,14 @@
     k = "kubectl";
     yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/yt-dlp.conf";
   };
+  autosuggestion = {
+    enable = true;
+    highlight = "fg=#646A6C";
+    strategy = [
+      "completion"
+      "history"
+    ];
+  };
   initExtra = ''
     ############################################################################
     #                                   PATH                                   #
