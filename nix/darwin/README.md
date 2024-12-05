@@ -6,20 +6,18 @@ complicated configurations and minutia.
 ## Important Notes/Limitations
 * The configuration set in this repo uses flakes/Nix unstable, which is subject to frequent changes and requires a little
 extra TLC.
+* The configuration in this repo also takes advantage of Home Manager, which isolates user profiles/configurations, compared to using system configurations.  You can find system-wide configurations in `configuration.nix` and user-specific configs in `home.nix`.  These two files (and imports contained within, which are hosted in other parallel directories in this repo) are used in tandem with Nix flakes to produce repeatable and declarative environments.
 * The configuration set in this repo currently only creates a Nix config for `aarch64-darwin` (Apple Silicon)
 systems, as configured in `flake.nix`:
 ```
-outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
-  let
-    configuration = { pkgs, config, ... }: {
-      nixpkgs = {
-        ** hostPlatform = "aarch64-darwin"; # The platform the configuration will be used on. **
-        config = {
-          allowUnfree = true; # allow unfree app installs
-        };
-      };
+nixpkgs = {
+   hostPlatform = "aarch64-darwin"; # The platform the configuration will be used on.
+   config = {
+     allowUnfree = true; # allow unfree app installs
+   };
+};
 ```
-* Several items are not yet configurable within MacOS via Nix, including:
+* Several items are not yet configurable within MacOS via `nix-darwin`, including:
   * Creating/assigning custom "Login Items" (programs which should run on user login), which is useful for programs like
   Maccy, a MacOS clipboard manager, or Raycast, a better Spotlight.
 
