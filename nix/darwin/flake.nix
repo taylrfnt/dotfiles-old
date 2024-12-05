@@ -31,7 +31,6 @@
           pkgs.pass
           pkgs.oh-my-posh
           pkgs.pyenv
-          pkgs.zsh-autosuggestions
           pkgs.mkalias
           pkgs.yt-dlp
           pkgs.lua-language-server
@@ -78,6 +77,7 @@
           "openjdk@17"
           "openjdk@21"
           "mas"
+          "coreutils"
         ];
         masApps = {
           "Final Cut Pro" = 424389933;
@@ -93,6 +93,7 @@
         packages = with pkgs.nerd-fonts; [
           # more fonts via `nix repl -f nerd-fonts.`
           jetbrains-mono
+          noto
         ];
       };
 
