@@ -1,6 +1,0 @@
-#ignore the tpm-managed plugins
-tmux-sensible
-tmux-yank
-tokyo-night-tmux
-tpm
-vim-tmux-navigator
