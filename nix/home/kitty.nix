@@ -3,9 +3,21 @@
   enable = true;
   font = {
     name = "jetbrains-mono";
-    package = "pkgs.nerd-fonts";
+    package = "${pkgs.nerd-fonts.jetbrains-mono}";
     size = 16.0;
   };
   themeFile = "Catppuccin-Mocha";
+  shellIntegration = {
+    mode = "enabled";
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+  };
+  settings = {
+    confirm_os_window_close = 0;
+  };
+  extraConfig = ''
+    modify_font cell_height 120%
+  '';
 }
 
