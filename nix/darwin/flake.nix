@@ -90,9 +90,9 @@
 
       # Install fonts
       fonts = {
-        packages = with pkgs; [
+        packages = with pkgs,nerd-fonts; [
           # more fonts via `nix repl -f nerd-fonts.`
-          nerd-fonts.jetbrains-mono
+          jetbrains-mono
         ];
       };
 
