@@ -15,6 +15,7 @@
   };
   settings = {
     confirm_os_window_close = 0;
+    macos_show_window_title_in = "none";
   };
   extraConfig = ''
     modify_font cell_height 120%

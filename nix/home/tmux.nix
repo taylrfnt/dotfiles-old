@@ -2,6 +2,7 @@
 {
   enable = true;
   mouse = true;
+  terminal = "tmux-256color";
   baseIndex = 1;
   clock24 = true;
   keyMode = "vi";
@@ -28,6 +29,7 @@
     }
   ];
   extraConfig = ''
+    set-option -sa terminal-overrides ",xterm*:Tc"
     # Run plugins
     run-shell ${pkgs.tmuxPlugins.yank}/share/tmux-plugins/yank/yank.tmux
     run-shell ${pkgs.tmuxPlugins.vim-tmux-navigator}/share/tmux-plugins/vim-tmux-navigator/vim-tmux-navigator.tmux

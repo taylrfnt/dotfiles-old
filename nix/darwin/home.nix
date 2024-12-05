@@ -14,7 +14,7 @@ in
   home.stateVersion = "24.11";
 
   programs = {
-    tmux = (import ../home/tmux.nix { inherit pkgs; });
+    tmux = (import ../home/tmux.nix { inherit config pkgs; });
     git = (import ../home/git.nix { inherit config pkgs; });
     neovim = (import ../home/neovim.nix { inherit config pkgs; });
     zsh = (import ../home/zsh.nix { inherit config pkgs; });
