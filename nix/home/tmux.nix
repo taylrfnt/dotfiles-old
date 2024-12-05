@@ -27,11 +27,11 @@
   ];
   extraConfig = ''
     # Run plugins
-    run-shell ${pkgs.tmuxPlugins.tmuxPlugins.sensible}/share/tmux-plugins/sensible/sensible.tmux
-    run-shell ${pkgs.tmuxPlugins.tmuxPlugins.yank}/share/tmux-plugins/yank/yank.tmux
-    run-shell ${pkgs.tmuxPlugins.tmuxPlugins.vim-tmux-navigator}/share/tmux-plugins/vim-tmux-navigator/vim-tmux-navigator.tmux
-    run-shell ${pkgs.tmuxPlugins.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
-    run-shell ${pkgs.tmuxPlugins.tmusPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
+    run-shell ${pkgs.tmuxPlugins.sensible}/share/tmux-plugins/sensible/sensible.tmux
+    run-shell ${pkgs.tmuxPlugins.yank}/share/tmux-plugins/yank/yank.tmux
+    run-shell ${pkgs.tmuxPlugins.vim-tmux-navigator}/share/tmux-plugins/vim-tmux-navigator/vim-tmux-navigator.tmux
+    run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
+    run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
 
     # Use Alt-arrow keys without prefix key to switch panes
     #bind -n M-Left select-pane -L
