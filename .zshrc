@@ -38,8 +38,8 @@ alias yt-dlp="yt-dlp --config-location ~/.config/yt-dlp/yt-dlp.conf"
 #                                   JAVA                                   #
 ############################################################################
 # set JAVA_HOME as JDK17
-JAVA_VERSION=17
-export JAVA_HOME="$(brew --prefix)/opt/openjdk@${JAVA_VERSION}"
+# JAVA_VERSION=17
+# export JAVA_HOME="$(brew --prefix)/opt/openjdk@${JAVA_VERSION}"
 
 ############################################################################
 #                                  PYENV                                   #
@@ -48,7 +48,7 @@ export JAVA_HOME="$(brew --prefix)/opt/openjdk@${JAVA_VERSION}"
 # the following to
 # ~/.zprofile (for login shells)
 # and ~/.zshrc (for interactive shells) :
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 

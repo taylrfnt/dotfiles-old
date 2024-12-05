@@ -51,6 +51,7 @@
           pkgs.maccy
           pkgs.raycast
           pkgs.kubectl
+          pkgs.zsh
         ];
 
       # user setup
