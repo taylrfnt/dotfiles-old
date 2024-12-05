@@ -3,15 +3,22 @@ let
   inherit (config.lib.file) mkOutOfStoreSymlink;
 in
 {
+  # let Home Manager install & manage itself
   programs.home-manager.enable = true;
 
-  home.username = "taylorfont";
-  home.homeDirectory = "/Users/taylorfont";
-  xdg.enable = true;
+  home = {
+    username = "taylorfont";
+    homeDirectory = "/Users/taylorfont";
+    stateVersion = "24.11";
+    packages = [
+      pkgs.kubectl
+    ];
+  };
 
-  xdg.configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylorfont/dotfiles/.config/nvim";
-
-  home.stateVersion = "24.11";
+  xdg = {
+    enable = true;
+    configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylorfont/dotfiles/.config/nvim";
+  };
 
   programs = {
     tmux = (import ../home/tmux.nix { inherit config pkgs; });
