@@ -72,6 +72,7 @@
       "kitty"
       "obsidian"
       "jagex" # jagex is manual - run `open /opt/homebrew/Caskroom/jagex/1.17.3/Jagex\ Launcher\ Installer.app`
+      "discord"
     ];
     brews = [
       "openjdk@17"
@@ -109,7 +110,7 @@
       dock = {
         autohide = true;
         autohide-delay = 0.0; # no delay for auto-hide/show
-        orientation = "left";
+        orientation = "bottom";
         mineffect = "scale";
         minimize-to-application = true;
         magnification = false;
