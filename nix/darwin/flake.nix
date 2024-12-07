@@ -15,7 +15,7 @@
     # $ darwin-rebuild build --flake .#<flake-name>
     darwinConfigurations."amaterasu-base" = nix-darwin.lib.darwinSystem {
       modules = [
-        ./base-configuration.nix
+        ./base/configuration.nix
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
@@ -36,7 +36,7 @@
 
     darwinConfigurations."amaterasu-game" = nix-darwin.lib.darwinSystem {
       modules = [
-        ./game-configuration.nix
+        ./game/configuration.nix
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
@@ -57,7 +57,7 @@
 
     darwinConfigurations."amaterasu-edit" = nix-darwin.lib.darwinSystem {
       modules = [
-        ./edit-configuration.nix
+        ./edit/configuration.nix
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
