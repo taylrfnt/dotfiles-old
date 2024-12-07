@@ -21,6 +21,28 @@ nixpkgs = {
   * Creating/assigning custom "Login Items" (programs which should run on user login), which is useful for programs like
   Maccy, a MacOS clipboard manager, or Raycast, a better Spotlight.
 
+## Defined darwin flakes
+There are currently three flakes defined for the `amaterasu` system (desktop/home Mac machine):
+* base
+* edit
+* game
+
+Each of these flakes has their own configuration set to avoid bloat and to better serve specific purposes (as the names of each flake imply).
+You can find each configuration set in the respective directory for the flake within the `configuration.nix` (e.g. configuration for
+`base` lives in `base/configuration.nix`).  A summary of each flake's intent is below.
+
+### base
+This is intended to be the default/most-used flake.  Base contains the minimal configuration set for a fully functional system for daily use.
+Examples include web browsing, file editing (both in `neovim` and otherwise), command-line actions, and more.
+
+### edit
+This flake is intended for video editing and removes many of the command line tools present in the `base` flake, while adding an installation of
+Final Cut Pro for editing use.
+
+### game
+This flake is an extremely lightweight flake meant for gaming.  Since gaming capabilities are pretty limited on darwin systems, this flake currently
+downloads the Jagex launcher (for RuneScape) and Discord.
+
 ## Getting Started
 ### Install `nix` (package manager)
 1. To get started, you need to install `nix` onto your system.  You can find the download command at the
