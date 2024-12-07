@@ -20,33 +20,12 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
-    pkgs.neovim
-    pkgs.tmux
-    pkgs.git
     pkgs.stow
-    pkgs.gh
     pkgs.pass
     pkgs.oh-my-posh
-    pkgs.pyenv
     pkgs.mkalias
-    pkgs.yt-dlp
-    pkgs.lua-language-server
-    pkgs.gopls
-    pkgs.marksman
-    pkgs.gofumpt
-    pkgs.prettierd
-    pkgs.yaml-language-server
-    pkgs.yamlfix
-    pkgs.yamlfmt
-    pkgs.shellcheck
-    pkgs.uncrustify
-    pkgs.bash-language-server
-    pkgs.jq
-    pkgs.stylua
-    pkgs.zsh-autosuggestions
     pkgs.maccy
     pkgs.raycast
-    pkgs.kubectl
     pkgs.zsh
   ];
 
@@ -75,13 +54,9 @@
       "discord"
     ];
     brews = [
-      "openjdk@17"
-      "openjdk@21"
       "mas"
-      "coreutils"
     ];
     masApps = {
-      "Final Cut Pro" = 424389933;
       "Yoink" = 457622435;
     };
     onActivation.cleanup = "zap";
