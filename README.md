@@ -62,7 +62,8 @@ best to install them prior to any installation attempts to avoid any future head
 ## Using this repo's dotfiles
 1. Check out this `dotfiles` repo in your `$HOME` directory using git:
 ```
-$ git clone git@github.com/taylrfnt/dotfiles.git ~
+$ mkdir -p ~/dotfiles
+$ git clone ${REPO_URL} ~/dotfiles
 ```
 2. Navigate into the freshly cloned directory:
 ```
