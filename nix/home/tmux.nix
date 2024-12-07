@@ -1,6 +1,7 @@
 { pkgs, ...}:
 {
   enable = true;
+  aggressiveResize = true;
   mouse = true;
   terminal = "tmux-256color";
   baseIndex = 1;
