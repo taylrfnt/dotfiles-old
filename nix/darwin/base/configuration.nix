@@ -71,6 +71,7 @@
       "bitwarden"
       "kitty"
       "obsidian"
+      "nikitabobko/tap/aerospace"
     ];
     brews = [
       "openjdk@17"

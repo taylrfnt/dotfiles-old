@@ -31,4 +31,5 @@ iterm2/*
 jgit/*
 zed/*
 nix
+.config/nvim
 
