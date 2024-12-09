@@ -2,6 +2,7 @@
 {
   enable = true;
   aggressiveResize = true;
+  terminal = "tmux-256color";
   mouse = true;
   baseIndex = 1;
   clock24 = true;
