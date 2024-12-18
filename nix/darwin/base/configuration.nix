@@ -47,6 +47,7 @@
     pkgs.maccy
     pkgs.raycast
     pkgs.kubectl
+    pkgs.bruno
     pkgs.zsh
   ];
 
@@ -70,6 +71,7 @@
       "the-unarchiver"
       "bitwarden"
       "kitty"
+      "thunderbird"
       "obsidian"
       "nikitabobko/tap/aerospace"
     ];
