@@ -80,6 +80,8 @@
       "openjdk@21"
       "mas"
       "coreutils"
+      "helm"
+      "helmfile"
     ];
     masApps = {
       "Yoink" = 457622435;
