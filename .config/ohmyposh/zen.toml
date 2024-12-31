@@ -1,9 +1,16 @@
-#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-
-version = 2
-final_space = true
 console_title_template = '{{.UserName}}@{{.HostName}} :: {{.PWD}}'
-# console_title_template = '{{.UserName}}@{{.HostName}} :: {{.Shell}} in {{.PWD}}'
+version = 3
+final_space = true
+
+[secondary_prompt]
+  template = '❯❯ '
+  foreground = 'magenta'
+  background = 'transparent'
+
+[transient_prompt]
+  template = '❯ '
+  background = 'transparent'
+  foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
 
 [[blocks]]
   type = 'prompt'
@@ -11,24 +18,26 @@ console_title_template = '{{.UserName}}@{{.HostName}} :: {{.PWD}}'
   newline = true
 
   [[blocks.segments]]
+    template = '{{.UserName}}@{{.HostName}} :: {{ .Path }}'
+    foreground = 'blue'
+    background = 'transparent'
     type = 'path'
     style = 'plain'
-    background = 'transparent'
-    foreground = 'blue'
-    template = '{{.UserName}}@{{.HostName}} :: {{ .Path }}'
 
     [blocks.segments.properties]
+      cache_duration = 'none'
       style = 'full'
 
   [[blocks.segments]]
-    type = 'git'
-    style = 'plain'
+    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     foreground = 'p:grey'
     background = 'transparent'
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+    type = 'git'
+    style = 'plain'
 
     [blocks.segments.properties]
       branch_icon = ''
+      cache_duration = 'none'
       commit_icon = '@'
       fetch_status = true
 
@@ -37,13 +46,14 @@ console_title_template = '{{.UserName}}@{{.HostName}} :: {{.PWD}}'
   overflow = 'hidden'
 
   [[blocks.segments]]
-    type = 'executiontime'
-    style = 'plain'
+    template = '{{ .FormattedMs }}'
     foreground = 'yellow'
     background = 'transparent'
-    template = '{{ .FormattedMs }}'
+    type = 'executiontime'
+    style = 'plain'
 
     [blocks.segments.properties]
+      cache_duration = 'none'
       threshold = 5000
 
 [[blocks]]
@@ -52,76 +62,59 @@ console_title_template = '{{.UserName}}@{{.HostName}} :: {{.PWD}}'
   newline = true
 
   [[blocks.segments]]
+    template = '❯'
+    background = 'transparent'
     type = 'text'
     style = 'plain'
-    foreground_templates = [
-      "{{if gt .Code 0}}red{{end}}",
-      "{{if eq .Code 0}}magenta{{end}}",
-    ]
-    background = 'transparent'
-    template = '❯'
+    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
 
-[transient_prompt]
-  foreground_templates = [
-    "{{if gt .Code 0}}red{{end}}",
-    "{{if eq .Code 0}}magenta{{end}}",
-  ]
-  background = 'transparent'
-  template = '❯ '
-
-[secondary_prompt]
-  foreground = 'magenta'
-  background = 'transparent'
-  template = '❯❯ '
-
-blocks = [ ]
+    [blocks.segments.properties]
+      cache_duration = 'none'
 
 [[tooltips]]
-type = "git"
-tips = [ "git", "g" ]
-style = "diamond"
-foreground = "#193549"
-background = "#ffb58a"
-leading_diamond = ""
-trailing_diamond = ""
-template = "{{ .HEAD }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}"
+  leading_diamond = ''
+  trailing_diamond = ''
+  template = '{{ .HEAD }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}'
+  foreground = '#193549'
+  background = '#ffb58a'
+  type = 'git'
+  style = 'diamond'
+  tips = ['git', 'g']
 
   [tooltips.properties]
-  fetch_status = true
-  fetch_upstream_icon = true
-  branch_icon = " "
+    branch_icon = ' '
+    fetch_status = true
+    fetch_upstream_icon = true
 
 [[tooltips]]
-type = "az"
-tips = [ "az" ]
-style = "diamond"
-foreground = "#193549"
-background = "#abc5fe"
-leading_diamond = ""
-trailing_diamond = ""
-# TODO: works for logged in, need to edit to display unknown if not logged in
-template = " {{ if .Name }} {{ .Name }}{{ else }} 󰭙 {{ end }}"
+  leading_diamond = ''
+  trailing_diamond = ''
+  template = ' {{ if .Name }} {{ .Name }}{{ else }} 󰭙 {{ end }}'
+  foreground = '#193549'
+  background = '#abc5fe'
+  type = 'az'
+  style = 'diamond'
+  tips = ['az']
 
   [tooltips.properties]
-  source = "cli"
+    source = 'cli'
 
 [[tooltips]]
-type = "kubectl"
-tips = [ "kubectl", "k" ]
-style = "diamond"
-foreground = "#193549"
-background = "#1352ab"
-leading_diamond = ""
-trailing_diamond = ""
-template = "󰠳 {{ .Context }}{{ if .Namespace }} :: {{ .Namespace }}{{ end }}"
+  leading_diamond = ''
+  trailing_diamond = ''
+  template = '󰠳 {{ .Context }}{{ if .Namespace }} :: {{ .Namespace }}{{ end }}'
+  foreground = '#193549'
+  background = '#1352ab'
+  type = 'kubectl'
+  style = 'diamond'
+  tips = ['kubectl', 'k']
 
 [[tooltips]]
-type = "helm"
-tips = [ "helm", "helmfile" ]
-style = "diamond"
-foreground = "#193549"
-background = "#a7cae1"
-leading_diamond = ""
-trailing_diamond = ""
-template = "Helm {{ .Version }}"
-
+  leading_diamond = ''
+  trailing_diamond = ''
+  template = 'Helm {{ .Version }}'
+  foreground = '#193549'
+  background = '#a7cae1'
+  type = 'helm'
+  style = 'diamond'
+  tips = ['helm', 'helmfile']

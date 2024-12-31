@@ -57,6 +57,7 @@
       # more fonts via `nix repl -f nerd-fonts.`
       jetbrains-mono
       noto
+      commit-mono
     ];
   };
 
@@ -70,10 +71,9 @@
       "iina"
       "the-unarchiver"
       "bitwarden"
-      "kitty"
       "thunderbird"
       "obsidian"
-      "nikitabobko/tap/aerospace"
+      "ghostty"
     ];
     brews = [
       "openjdk@17"
