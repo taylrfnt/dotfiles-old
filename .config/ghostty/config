@@ -1,9 +1,22 @@
-## See https://ghostty.org/docs/config for docs
+## See https://ghostty.org/docs/config for official docs & option sets
+
+# Shell Integration 
+shell-integration = zsh
 
 # Theming
 theme = catppuccin-mocha
+# in case the themes change or packages get cleaned in the future...
 # config-file = ?./catppuccin-mocha
 
 # Fonts
 font-family = CommitMono Nerd Font
-font-size = 16.5
+font-size = 16
+font-thicken = true
+
+# Cursor
+cursor-style = block
+shell-integration-features = no-cursor
+
+# Title
+macos-titlebar-proxy-icon = hidden
+title = " "
