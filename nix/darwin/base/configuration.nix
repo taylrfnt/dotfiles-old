@@ -75,6 +75,8 @@
       "thunderbird"
       "obsidian"
       "ghostty"
+      "lulu"
+      "oversight"
     ];
     brews = [
       "openjdk@17"
