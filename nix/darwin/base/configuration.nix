@@ -26,6 +26,7 @@
     pkgs.stow
     pkgs.gh
     pkgs.pass
+    pkgs.gnupg
     pkgs.oh-my-posh
     pkgs.pyenv
     pkgs.mkalias
