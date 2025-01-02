@@ -29,6 +29,13 @@ final_space = true
       style = 'full'
 
   [[blocks.segments]]
+    template = ' {{ if .Env.POSH_VI_MODE }}{{ .Env.POSH_VI_MODE }}{{ end }}'
+    foreground = '#ffc0cb'
+    background = 'transparent'
+    type = 'text'
+    style = 'plain'
+
+  [[blocks.segments]]
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     foreground = 'p:grey'
     background = 'transparent'
@@ -118,3 +125,4 @@ final_space = true
   type = 'helm'
   style = 'diamond'
   tips = ['helm', 'helmfile']
+

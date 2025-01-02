@@ -28,6 +28,7 @@
     pkgs.pass
     pkgs.gnupg
     pkgs.oh-my-posh
+    pkgs.zsh-vi-mode
     pkgs.pyenv
     pkgs.mkalias
     pkgs.yt-dlp
@@ -127,7 +128,7 @@
       menuExtraClock.Show24Hour = true; # show 24 hr clock in menu/login
       screencapture = {
         type = "png"; # make screenshots png files
-        location = "~/Downloads/"; # save screenshots to user's Downloads folder
+        target = "clipboard";
       };
     };
 
