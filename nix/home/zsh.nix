@@ -41,10 +41,11 @@
       eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
     fi
     # OMP zsh-vi-mode integration
+    bindkey -v
     _omp_redraw-prompt() {
       local precmd
       for precmd in "''${precmd_functions[@]}"; do
-        "$precmd""
+        "$precmd"
       done
       zle && zle reset-prompt
     }
@@ -79,7 +80,6 @@
     source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
   '';
   sessionVariables = {
-    CLICOLOR = 1;
   };
 }
 
