@@ -61,7 +61,7 @@
         POSH_VI_MODE="insert"
         ;;
       $ZVM_MODE_VISUAL)
-        POSH_VI_MODE="insert"
+        POSH_VI_MODE="visual"
         ;;
       $ZVM_MODE_VISUAL_LINE)
         POSH_VI_MODE="visual-line"
