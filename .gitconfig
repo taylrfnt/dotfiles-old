@@ -1,7 +1,7 @@
 [commit]
 	gpgsign = true
 [core]
-	editor = code --wait
+	editor = vim
 [gpg]
 	format = ssh
 [init]
