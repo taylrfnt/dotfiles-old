@@ -10,7 +10,7 @@
     yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/yt-dlp.conf";
   };
   autosuggestion = {
-    enable = true;
+    enable = false;
     highlight = "fg=#646A6C";
     strategy = [
       "completion"
@@ -78,6 +78,7 @@
       ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
     }
     source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+    source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   '';
   sessionVariables = {
   };
