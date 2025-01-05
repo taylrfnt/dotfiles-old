@@ -19,3 +19,6 @@ title = " "
 window-height = 35
 window-width = 100
 
+# scrollback
+scrollback-limit = 2048
+

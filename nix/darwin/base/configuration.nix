@@ -29,6 +29,7 @@
     pkgs.gnupg
     pkgs.oh-my-posh
     pkgs.zsh-vi-mode
+    pkgs.sketchybar
     pkgs.pyenv
     pkgs.mkalias
     pkgs.yt-dlp
@@ -51,15 +52,17 @@
     pkgs.kubectl
     pkgs.bruno
     pkgs.zsh
+    pkgs.sketchybar-app-font
   ];
 
   # Install fonts
   fonts = {
-    packages = with pkgs.nerd-fonts; [
+    packages = [
+      pkgs.sketchybar-app-font
       # more fonts via `nix repl -f nerd-fonts.`
-      jetbrains-mono
-      noto
-      commit-mono
+      pkgs.nerd-fonts.jetbrains-mono
+      pkgs.nerd-fonts.noto
+      pkgs.nerd-fonts.commit-mono
     ];
   };
 
