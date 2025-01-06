@@ -29,7 +29,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ../../home.nix;
+          home-manager.users.taylorfont = import ./home.nix;
         }
       ];
     };
@@ -50,7 +50,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ../../home.nix;
+          home-manager.users.taylorfont = import ./home.nix;
         }
       ];
     };
@@ -71,7 +71,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ../../home.nix;
+          home-manager.users.taylorfont = import ./home.nix;
         }
       ];
     };
@@ -92,7 +92,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ../../home.nix;
+          home-manager.users.taylorfont = import ./home.nix;
         }
       ];
     };
@@ -113,7 +113,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ../../home.nix;
+          home-manager.users.taylorfont = import ./home.nix;
         }
       ];
     };
