@@ -8,9 +8,6 @@
     };
   };
 
-  # Enable alternative shell support in nix-darwin.
-  # programs.fish.enable = true;
-
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -79,11 +76,17 @@
     onActivation.upgrade = true;
   };
 
+  # enable fish
+  programs.fish. enable = true;
+
   # user setup
-  users.users.taylorfont = {
-    name = "taylorfont";
-    description = "Taylor Font";
-    home = "/Users/taylorfont";
+  users = {
+    users.taylorfont = {
+      name = "taylorfont";
+      description = "Taylor Font";
+      home = "/Users/taylorfont";
+      shell = pkgs.fish;
+    };
   };
 
   environment.variables = {
