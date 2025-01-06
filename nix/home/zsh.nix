@@ -34,7 +34,7 @@
     export PATH="$(brew --prefix)/opt/openssl/bin:$PATH"
 
     ## ghostty fix
-    # export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
+    export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
 
     ############################################################################
     #                             VISUAL & PROMPT                              #
