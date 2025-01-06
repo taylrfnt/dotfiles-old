@@ -20,12 +20,9 @@ window-height = 35
 window-width = 150
 
 # shell integration
-shell-integration = zsh
-# # scrollback
-scrollback-limit = 10240
+shell-integration = none
 
 # fix tmux-vim-navigate
-macos-option-as-alt = true
 keybind = alt+right=unbind
 keybind = alt+left=unbind
 

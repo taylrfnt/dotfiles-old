@@ -34,26 +34,34 @@
     export PATH="$(brew --prefix)/opt/openssl/bin:$PATH"
 
     ## ghostty fix
-    export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
+    # export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
 
     ############################################################################
     #                             VISUAL & PROMPT                              #
     ############################################################################
+    # vi-mode config
+    function zvm_config() {
+      ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+    }
+    source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+    source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
     ## oh-my-posh
     if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
       eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
     fi
+
     # OMP zsh-vi-mode integration
     bindkey -v
+
     _omp_redraw-prompt() {
       local precmd
-      for precmd in "''${precmd_functions[@]}"; do
+      for precmd in "$precmd_functions"; do
         "$precmd"
       done
-      zle && zle reset-prompt
-    }
 
-    export POSH_VI_MODE="insert"
+      zle .reset-prompt
+    }
 
     function zvm_after_select_vi_mode() {
       case $ZVM_MODE in
@@ -75,13 +83,6 @@
       esac
       _omp_redraw-prompt
     }
-
-    # vi-mode config
-    function zvm_config() {
-      ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-    }
-    source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-    source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   '';
   sessionVariables = {
   };
