@@ -8,9 +8,6 @@
     };
   };
 
-  # Enable alternative shell support in nix-darwin.
-  # programs.fish.enable = true;
-
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -29,36 +26,17 @@
     pkgs.gnupg
     pkgs.oh-my-posh
     pkgs.zsh-vi-mode
-    pkgs.sketchybar
-    pkgs.pyenv
     pkgs.mkalias
-    pkgs.yt-dlp
-    pkgs.lua-language-server
-    pkgs.gopls
-    pkgs.marksman
-    pkgs.gofumpt
-    pkgs.prettierd
-    pkgs.yaml-language-server
-    pkgs.yamlfix
-    pkgs.yamlfmt
-    pkgs.shellcheck
-    pkgs.uncrustify
-    pkgs.bash-language-server
-    pkgs.jq
-    pkgs.stylua
     pkgs.zsh-autosuggestions
     pkgs.maccy
     pkgs.raycast
-    pkgs.kubectl
-    pkgs.bruno
     pkgs.zsh
-    pkgs.sketchybar-app-font
+    pkgs.fish
   ];
 
   # Install fonts
   fonts = {
     packages = [
-      pkgs.sketchybar-app-font
       # more fonts via `nix repl -f nerd-fonts.`
       pkgs.nerd-fonts.jetbrains-mono
       pkgs.nerd-fonts.noto
@@ -98,11 +76,17 @@
     onActivation.upgrade = true;
   };
 
+  # enable fish
+  programs.fish. enable = true;
+
   # user setup
-  users.users.taylorfont = {
-    name = "taylorfont";
-    description = "Taylor Font";
-    home = "/Users/taylorfont";
+  users = {
+    users.taylorfont = {
+      name = "taylorfont";
+      description = "Taylor Font";
+      home = "/Users/taylorfont";
+      shell = pkgs.fish;
+    };
   };
 
   environment.variables = {
