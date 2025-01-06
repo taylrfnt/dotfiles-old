@@ -9,6 +9,14 @@
     k = "kubectl";
     yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/yt-dlp.conf";
   };
+  autosuggestion = {
+    enable = false;
+    highlight = "fg=#646A6C";
+    strategy = [
+      "completion"
+      "history"
+    ];
+  };
   initExtra = ''
     # fixing delete key
     # https://superuser.com/questions/997593/why-does-zsh-insert-a-when-i-press-the-delete-key/1078653#1078653
@@ -35,8 +43,7 @@
     if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
       eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
     fi
-
-    # zsh-vi-mode integration with omp
+    # OMP zsh-vi-mode integration
     bindkey -v
     _omp_redraw-prompt() {
       local precmd
@@ -72,9 +79,6 @@
     # vi-mode config
     function zvm_config() {
       ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-      ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BEAM
-      ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
-      ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
     }
     source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
     source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
