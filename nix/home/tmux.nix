@@ -2,7 +2,6 @@
 {
   enable = true;
   aggressiveResize = true;
-  terminal = "tmux-256color";
   mouse = true;
   baseIndex = 1;
   clock24 = true;
@@ -51,6 +50,7 @@
     run-shell ${pkgs.tmuxPlugins.tokyo-night-tmux}/share/tmux-plugins/tokyo-night-tmux/tokyo-night.tmux
     # run-shell ${pkgs.tmuxPlugins.catppuccin}/share/tmux-plugins/catppuccin/catppuccin.tmux
 
+    ## Additional keybinds (https://www.seanh.cc/2020/12/28/binding-keys-in-tmux/)
     # Use Alt-arrow keys without prefix key to switch panes
     bind -n M-Left select-pane -L
     bind -n M-Right select-pane -R

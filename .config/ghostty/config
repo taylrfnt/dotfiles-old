@@ -20,8 +20,9 @@ window-height = 35
 window-width = 150
 
 # shell integration
-shell-integration = zsh
-# # scrollback
+shell-integration = none
+# shell-integration-features = no-cursor
+# scrollback
 scrollback-limit = 10240
 
 # fix tmux-vim-navigate
