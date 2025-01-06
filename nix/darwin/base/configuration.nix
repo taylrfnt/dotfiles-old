@@ -105,6 +105,13 @@
     home = "/Users/taylorfont";
   };
 
+  environment.variables = {
+    # see https://github.com/ghostty-org/ghostty/discussions/2832
+    XDG_DATA_DIRS = ["/Applications/Ghostty.app/Contents/Resources/ghostty/shell-integration"];
+    EDITOR = "nvim";
+  };
+
+
   system = {
     # Set Git commit hash for darwin-version.
     #configurationRevision = self.rev or self.dirtyRev or null;

@@ -17,8 +17,15 @@ title = " "
 
 # Window
 window-height = 35
-window-width = 100
+window-width = 150
 
-# scrollback
-scrollback-limit = 2048
+# shell integration
+shell-integration = zsh
+# # scrollback
+scrollback-limit = 10240
+
+# fix tmux-vim-navigate
+macos-option-as-alt = true
+keybind = alt+right=unbind
+keybind = alt+left=unbind
 
