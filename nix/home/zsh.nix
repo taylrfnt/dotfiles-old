@@ -46,15 +46,15 @@
 
     # OMP zsh-vi-mode integration
     bindkey -v
-
     _omp_redraw-prompt() {
       local precmd
       for precmd in "''${precmd_functions[@]}"; do
-        "''${precmd}"
+        "$precmd"
       done
-
-      zle && zle reset-prompt
+      zle .reset-prompt
     }
+
+    export POSH_VI_MODE="insert"
 
     function zvm_after_select_vi_mode() {
       case $ZVM_MODE in
@@ -83,8 +83,6 @@
     }
     source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
     source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-
   '';
   sessionVariables = {
   };
