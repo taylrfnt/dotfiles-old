@@ -13,7 +13,7 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager, ... }: {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#<flake-name>
-    darwinConfigurations."amaterasu-base" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."base" = nix-darwin.lib.darwinSystem {
       modules = [
         ./base/configuration.nix
         nix-homebrew.darwinModules.nix-homebrew
@@ -34,7 +34,7 @@
       ];
     };
 
-    darwinConfigurations."amaterasu-game" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."game" = nix-darwin.lib.darwinSystem {
       modules = [
         ./game/configuration.nix
         nix-homebrew.darwinModules.nix-homebrew
@@ -55,7 +55,7 @@
       ];
     };
 
-    darwinConfigurations."amaterasu-edit" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."edit" = nix-darwin.lib.darwinSystem {
       modules = [
         ./edit/configuration.nix
         nix-homebrew.darwinModules.nix-homebrew
@@ -76,9 +76,30 @@
       ];
     };
 
-    darwinConfigurations."amaterasu-typeset" = nix-darwin.lib.darwinSystem {
+    darwinConfigurations."typeset" = nix-darwin.lib.darwinSystem {
       modules = [
         ./typeset/configuration.nix
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true; # enable homebrew via nix
+            enableRosetta = true; # Apple Silicon Only
+            user = "taylorfont"; # User owning the Homebrew prefix
+          };
+        }
+        home-manager.darwinModules.home-manager
+        {
+          # `home-manager` config
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.taylorfont = import ./home.nix;
+        }
+      ];
+    };
+
+    darwinConfigurations."dev" = nix-darwin.lib.darwinSystem {
+      modules = [
+        ./dev/configuration.nix
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {

@@ -52,7 +52,6 @@
     pkgs.kubectl
     pkgs.bruno
     pkgs.zsh
-    pkgs.sketchybar-app-font
   ];
 
   # Install fonts
