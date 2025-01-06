@@ -85,6 +85,7 @@
     source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   '';
   sessionVariables = {
+    CLICOLOR=1;
   };
 }
 
