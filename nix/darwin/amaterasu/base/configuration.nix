@@ -112,7 +112,6 @@
 
   environment.variables = {
     # see https://github.com/ghostty-org/ghostty/discussions/2832
-    # XDG_DATA_DIRS = ["/Applications/Ghostty.app/Contents/Resources/ghostty/shell-integration"];
     EDITOR = "nvim";
   };
 
@@ -122,7 +121,7 @@
     raycast = {
       serviceConfig.ProgramArguments =
         [ "${pkgs.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
-      serviceConfig.KeepAlive = true;
+      serviceConfig.RunAtLoad = true;
     };
 
     maccy = {
@@ -226,7 +225,8 @@
 
       loginwindow = {
         GuestEnabled = false;
-        LoginwindowText = "amaterasu";
+        LoginwindowText= " ";
+        SHOWFULLNAME = false;
       };
 
       menuExtraClock = {
