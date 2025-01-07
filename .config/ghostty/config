@@ -19,10 +19,16 @@ title = " "
 window-height = 35
 window-width = 150
 
-# shell integration
-#shell-integration = zsh
+# mouse focus in ghostty native splits
+#focus-follows-mouse = true
+
+# override default macOS quitting
+quit-after-last-window-closed = true
 
 # fix tmux-vim-navigate
 keybind = alt+right=unbind
 keybind = alt+left=unbind
+
+# copy on text selection
+copy-on-select = true
 
