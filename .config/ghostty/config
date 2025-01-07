@@ -20,7 +20,7 @@ window-height = 35
 window-width = 150
 
 # shell integration
-shell-integration = zsh
+#shell-integration = zsh
 
 # fix tmux-vim-navigate
 keybind = alt+right=unbind

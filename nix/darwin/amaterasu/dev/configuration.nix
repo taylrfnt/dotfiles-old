@@ -54,23 +54,17 @@
       "iina"
       "the-unarchiver"
       "bitwarden"
-      "thunderbird"
       "obsidian"
       "ghostty"
       "lulu"
       "oversight"
+      "keycastr"
     ];
     brews = [
       "openjdk@17"
       "openjdk@21"
-      "mas"
       "coreutils"
-      "helm"
-      "helmfile"
     ];
-    masApps = {
-      "Yoink" = 457622435;
-    };
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;

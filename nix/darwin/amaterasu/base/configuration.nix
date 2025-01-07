@@ -47,8 +47,8 @@
     pkgs.jq
     pkgs.stylua
     pkgs.zsh-autosuggestions
-    pkgs.maccy
     pkgs.raycast
+    pkgs.maccy
     pkgs.kubectl
     pkgs.bruno
     pkgs.zsh
@@ -80,6 +80,7 @@
       "ghostty"
       "lulu"
       "oversight"
+      "keycastr"
     ];
     brews = [
       "openjdk@17"
@@ -110,6 +111,34 @@
     EDITOR = "nvim";
   };
 
+  # login items
+  launchd.user.agents = {
+    raycast = {
+      serviceConfig.ProgramArguments =
+        [ "${pkgs.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
+      serviceConfig.KeepAlive = true;
+    };
+    maccy = {
+      serviceConfig.ProgramArguments =
+        [ "${pkgs.maccy}/Applications/Maccy.app/Contents/MacOS/Maccy" ];
+      serviceConfig.RunAtLoad = true;
+    };
+    oversight = {
+      serviceConfig.ProgramArguments =
+        [ "/Applications/OverSight.app/Contents/MacOS/OverSight" ];
+      serviceConfig.RunAtLoad = true;
+    };
+    lulu = {
+      serviceConfig.ProgramArguments =
+        [ "/Applications/LuLu.app/Contents/MacOS/LuLu" ];
+      serviceConfig.RunAtLoad = true;
+    };
+    yoink = {
+      serviceConfig.ProgramArguments =
+        [ "/Applications/Yoink.app/Contents/MacOS/Yoink" ];
+      serviceConfig.RunAtLoad = true;
+    };
+  };
 
   system = {
     # Set Git commit hash for darwin-version.
@@ -130,6 +159,28 @@
         minimize-to-application = true;
         magnification = false;
         show-recents = false; # hide recent apps from dock
+        persistent-apps = [
+          "/System/Applications/Launchpad.app"
+          "/Applications/Firefox Nightly.app"
+          "/Applications/Google Chrome.app/"
+          "/Applications/Bitwarden.app"
+          "/System/Applications/Messages.app"
+          "/System/Applications/FaceTime.app"
+          "/Applications/Thunderbird.app"
+          "/System/Applications/Photos.app"
+          "/System/Applications/TV.app"
+          "/System/Applications/Music.app"
+          "/System/Applications/News.app"
+          "/Applications/Obsidian.app/"
+          "/Applications/IINA.app/"
+          "/Applications/Ghostty.app"
+          "/System/Applications/App Store.app"
+          "/System/Applications/System Settings.app"
+          "/System/Applications/iPhone Mirroring.app"
+        ];
+        persistent-others = [
+          "/Users/taylorfont/Downloads"
+        ];
       };
       finder.FXPreferredViewStyle = "clmv"; # column view
       loginwindow.GuestEnabled = false; # no guest logins
