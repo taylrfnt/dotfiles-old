@@ -78,20 +78,20 @@ final_space = true
     [blocks.segments.properties]
       cache_duration = 'none'
 
-[[tooltips]]
-  leading_diamond = ''
-  trailing_diamond = ''
-  template = '{{ .HEAD }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}'
-  foreground = '#193549'
-  background = '#ffb58a'
-  type = 'git'
-  style = 'diamond'
-  tips = ['git', 'g']
-
-  [tooltips.properties]
-    branch_icon = ' '
-    fetch_status = true
-    fetch_upstream_icon = true
+# [[tooltips]]
+#   leading_diamond = ''
+#   trailing_diamond = ''
+#   template = '{{ .HEAD }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}'
+#   foreground = '#193549'
+#   background = '#ffb58a'
+#   type = 'git'
+#   style = 'diamond'
+#   tips = ['git', 'g']
+#
+#   [tooltips.properties]
+#     branch_icon = ' '
+#     fetch_status = true
+#     fetch_upstream_icon = true
 
 [[tooltips]]
   leading_diamond = ''
