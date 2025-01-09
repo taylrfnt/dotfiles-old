@@ -27,39 +27,44 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [
-    pkgs.zsh
-    pkgs.oh-my-posh
-    pkgs.zsh-vi-mode
-    pkgs.zsh-autosuggestions
-    pkgs.neovim
-    pkgs.tmux
-    pkgs.git
-    pkgs.stow
-    pkgs.gh
-    pkgs.pass
-    pkgs.gnupg
-    pkgs.raycast
-    pkgs.maccy
-    pkgs.bruno
-    pkgs.mkalias # nix needs to make darwin aliases rather than symlinks for apps
-    pkgs.openssh
-    pkgs.yt-dlp
-    pkgs.lua-language-server
-    pkgs.gopls
-    pkgs.marksman
-    pkgs.gofumpt
-    pkgs.prettierd
-    pkgs.yaml-language-server
-    pkgs.yamlfix
-    pkgs.yamlfmt
-    pkgs.shellcheck
-    pkgs.uncrustify
-    pkgs.bash-language-server
-    pkgs.jq
-    pkgs.stylua
-    pkgs.kubectl
-  ];
+  environment = {
+    systemPackages = [
+      pkgs.zsh
+      pkgs.oh-my-posh
+      pkgs.zsh-vi-mode
+      pkgs.zsh-autosuggestions
+      pkgs.neovim
+      pkgs.tmux
+      pkgs.git
+      pkgs.stow
+      pkgs.gh
+      pkgs.pass
+      pkgs.gnupg
+      pkgs.raycast
+      pkgs.maccy
+      pkgs.bruno
+      pkgs.mkalias # nix needs to make darwin aliases rather than symlinks for apps
+      pkgs.openssh
+      pkgs.yt-dlp
+      pkgs.lua-language-server
+      pkgs.gopls
+      pkgs.marksman
+      pkgs.gofumpt
+      pkgs.prettierd
+      pkgs.yaml-language-server
+      pkgs.yamlfix
+      pkgs.yamlfmt
+      pkgs.shellcheck
+      pkgs.uncrustify
+      pkgs.bash-language-server
+      pkgs.jq
+      pkgs.stylua
+      pkgs.kubectl
+    ];
+    variables = {
+      EDITOR = "nvim";
+    };
+  };
 
   # Install fonts
   fonts = {
@@ -96,6 +101,9 @@
 
     masApps = {
       "Yoink" = 457622435;
+      "Pages" = 409201541;
+      "Numbers" = 409203825;
+      "Keynote" = 409183694;
     };
 
     onActivation.cleanup = "zap";
@@ -108,11 +116,6 @@
     name = "taylorfont";
     description = "Taylor Font";
     home = "/Users/taylorfont";
-  };
-
-  environment.variables = {
-    # see https://github.com/ghostty-org/ghostty/discussions/2832
-    EDITOR = "nvim";
   };
 
   # login items
@@ -175,7 +178,6 @@
         '';
       # automatically catch (most) new prefs without login/restart
       postUserActivation.text = ''
-        # Following line should allow us to avoid a logout/login cycle
         /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
       '';
     };
