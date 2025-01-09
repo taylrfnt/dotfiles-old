@@ -26,10 +26,17 @@ window-width = 150
 # override default macOS quitting
 quit-after-last-window-closed = true
 
+# copy on text selection
+copy-on-select = true
+
 # fix tmux-vim-navigate
 keybind = alt+right=unbind
 keybind = alt+left=unbind
 
-# copy on text selection
-copy-on-select = true
+## scrollback hack (until API makes release) ##
+# pressing ctrl+f will paste the scrollback buffer into a
+# file and the path into the prompt
+keybind = ctrl+f=write_scrollback_file:paste
+# now press super+f to open in your editor!
+keybind = "super+f=text:\x1b[H ${EDITOR} \n"
 
