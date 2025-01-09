@@ -81,7 +81,7 @@
       "bitwarden"
       "thunderbird"
       "obsidian"
-      "ghostty"
+      "ghostty@tip"
       "lulu"
       "oversight"
       "keycastr"

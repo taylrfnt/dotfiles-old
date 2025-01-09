@@ -1,7 +1,8 @@
 ## See https://ghostty.org/docs/config for official docs & option sets
 
-# Theming
+# Theming & Appearance
 theme = catppuccin-mocha
+window-colorspace = display-p3
 # in case the themes change or packages get cleaned in the future...
 # config-file = ?./catppuccin-mocha
 
