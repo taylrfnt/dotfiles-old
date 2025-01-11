@@ -86,10 +86,17 @@
       "bitwarden"
       "thunderbird"
       "obsidian"
-      "ghostty@tip"
+      # make ghostty greedy since we use tip instead of main/stable
+      {
+        name = "ghostty@tip";
+        greedy = true;
+      }
       "lulu"
       "oversight"
       "keycastr"
+      "obs"
+      "audio-hijack"
+      #"xquartz"
     ];
 
     brews = [
