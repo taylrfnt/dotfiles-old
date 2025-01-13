@@ -85,7 +85,7 @@ All we need to do is tell `nix` to rebuild our environment with the configuratio
 the following command:
 
 ```
-❯ nix run nix-darwin --extra-experimental-features "nix-command flake" -- switch --flake ~/nix/darwin#${FLAKE_NAME}
+❯ nix run nix-darwin --extra-experimental-features "nix-command flake" -- switch --flake ~/nix/darwin/${DEVICE_HOSTNAME}#${FLAKE_NAME}
 ```
 
 This command will take a few minutes to run the first time, but once it completes you should have the configurations applied to your environment and
@@ -180,6 +180,6 @@ packages via the following command:
 Note this is a vanilla `nix` command, not a `nix-darwin` derivative.  Once the command above completes, it should return an output of any available upgrades.
 To then apply these upgrades, simply rebuild your flake (this command also can be used to rebuild when you modify any flake configurations, not exclusively for upgrades):
 ```
-❯ darwin-rebuild -- switch --flake ~/nix/darwin#${FLAKE_NAME}
+❯ darwin-rebuild -- switch --flake ~/nix/darwin${DEVICE_HOSTNAME}#${FLAKE_NAME}
 ```
 
