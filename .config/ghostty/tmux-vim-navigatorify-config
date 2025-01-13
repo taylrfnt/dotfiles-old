@@ -1,0 +1,29 @@
+## !!!ENABLING THESE KEYBINDS WILL BREAK TMUX-VIM-NAVIGATOR KEYBINDS!!!
+##
+## This config file imports keybinds that most cloesly resemble what 
+## a tmux-vim-navigate plugin user would be familiar with, translated to the closest 
+## analog in Ghostty.
+## Based on the configs available in tmux-vim-navigator plugin by Chris Toomey:
+## https://github.com/christoomey/vim-tmux-navigator
+## and some comfortable defaults for new users.
+
+# TMUX WINDOWS VIM-NAVIGATOR
+keybind = shift+alt+h=next_tab
+keybind = shift+alt+l=previous_tab
+
+# TMUX PANES VIM-NAVIGATOR
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:down
+keybind = alt+k=goto_split:up
+keybind = alt+l=goto_split:right
+keybind = alt+slash=goto_split:previous
+
+## COMFORT VIM-NAVIGATOR
+# Windows
+keybind = shift+right=next_tab
+keybind = shift+right=previous_tab
+# Panes
+keybind = alt+left=goto_split:left
+keybind = alt+down=goto_split:down
+keybind = alt+up=goto_split:up
+keybind = alt+right=goto_split:right
