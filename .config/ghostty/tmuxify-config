@@ -16,6 +16,10 @@
 ## remapped to any key desired that Ghostty supports (like ctrl+space),
 ## for example.
 
+# SENSIBLE DEFAULTS
+confirm-close-surface = false
+window-save-state = default
+
 # TMUX WINDOW KEYBINDS
 keybind = "ctrl+b>c=new_tab"
 keybind = "ctrl+b>n=next_tab"
