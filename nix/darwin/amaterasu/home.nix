@@ -7,8 +7,8 @@ in
   programs.home-manager.enable = true;
 
   home = {
-    username = "taylorfont";
-    homeDirectory = "/Users/taylorfont";
+    username = "taylor";
+    homeDirectory = "/Users/taylor";
     stateVersion = "24.11";
     packages = [
       pkgs.kubectl
@@ -17,7 +17,7 @@ in
 
   xdg = {
     enable = true;
-    configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylorfont/dotfiles/.config/nvim";
+    configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/.config/nvim";
   };
 
   programs = {

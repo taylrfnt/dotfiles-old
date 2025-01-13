@@ -119,10 +119,10 @@
   };
 
   # user setup
-  users.users.taylorfont = {
-    name = "taylorfont";
-    description = "Taylor Font";
-    home = "/Users/taylorfont";
+  users.users.taylor = {
+    name = "taylor";
+    description = "Taylor";
+    home = "/Users/taylor";
   };
 
   # login items
@@ -220,7 +220,7 @@
           "/System/Applications/iPhone Mirroring.app"
         ];
         persistent-others = [
-          "/Users/taylorfont/Downloads"
+          "/Users/taylor/Downloads"
         ];
       };
 

@@ -4,7 +4,7 @@
   lfs.enable = true;
   userName = "taylrfnt";
   userEmail = "taylr.fnt@gmail.com";
-  signing.key = "~/keys/github/gh_personal";
+  signing.key = "~/keys/github/amaterasu_ed25519";
   signing.signByDefault = true;
 
   extraConfig = {

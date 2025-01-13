@@ -21,7 +21,7 @@
           nix-homebrew = {
             enable = true; # enable homebrew via nix
             enableRosetta = true; # Apple Silicon Only
-            user = "taylorfont"; # User owning the Homebrew prefix
+            user = "taylor"; # User owning the Homebrew prefix
           };
         }
         home-manager.darwinModules.home-manager
@@ -29,7 +29,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ./home.nix;
+          home-manager.users.taylor = import ./home.nix;
         }
       ];
     };
@@ -42,7 +42,7 @@
           nix-homebrew = {
             enable = true; # enable homebrew via nix
             enableRosetta = true; # Apple Silicon Only
-            user = "taylorfont"; # User owning the Homebrew prefix
+            user = "taylor"; # User owning the Homebrew prefix
           };
         }
         home-manager.darwinModules.home-manager
@@ -50,7 +50,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ./home.nix;
+          home-manager.users.taylor = import ./home.nix;
         }
       ];
     };
@@ -63,7 +63,7 @@
           nix-homebrew = {
             enable = true; # enable homebrew via nix
             enableRosetta = true; # Apple Silicon Only
-            user = "taylorfont"; # User owning the Homebrew prefix
+            user = "taylor"; # User owning the Homebrew prefix
           };
         }
         home-manager.darwinModules.home-manager
@@ -71,7 +71,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ./home.nix;
+          home-manager.users.taylor = import ./home.nix;
         }
       ];
     };
@@ -84,7 +84,7 @@
           nix-homebrew = {
             enable = true; # enable homebrew via nix
             enableRosetta = true; # Apple Silicon Only
-            user = "taylorfont"; # User owning the Homebrew prefix
+            user = "taylor"; # User owning the Homebrew prefix
           };
         }
         home-manager.darwinModules.home-manager
@@ -92,7 +92,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ./home.nix;
+          home-manager.users.taylor = import ./home.nix;
         }
       ];
     };
@@ -105,7 +105,7 @@
           nix-homebrew = {
             enable = true; # enable homebrew via nix
             enableRosetta = true; # Apple Silicon Only
-            user = "taylorfont"; # User owning the Homebrew prefix
+            user = "taylor"; # User owning the Homebrew prefix
           };
         }
         home-manager.darwinModules.home-manager
@@ -113,7 +113,7 @@
           # `home-manager` config
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.taylorfont = import ./home.nix;
+          home-manager.users.taylor = import ./home.nix;
         }
       ];
     };
