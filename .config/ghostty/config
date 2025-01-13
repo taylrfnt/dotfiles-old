@@ -35,37 +35,6 @@ window-save-state = default
 keybind = alt+right=unbind
 keybind = alt+left=unbind
 
-## tmux-ify keybinds
-# tmux windows (tabs in Ghostty)
-keybind = "ctrl+space>c=new_tab"
-keybind = "ctrl+space>n=next_tab"
-#TODO: previous tab (index -1), Ghostty does not have this action yet
-keybind = "ctrl+space>l=previous_tab"
-#TODO: navigate tabs by index via goto_tab:{index} without writing every possible index
-
-# tmux panes (splits in Ghostty)
-# keybind = "ctrl+space>shift+5=new_split:right"
-#TODO: new_split:down (quote is not a char available for mapping)
-# keybind = "ctrl+space>right=goto_split:right"
-# keybind = "ctrl+space>left=goto_split:left"
-# keybind = "ctrl+space>up=goto_split:up"
-# keybind = "ctrl+space>down=goto_split:down"
-# keybind = "ctrl+space>o=goto_split:next"
-# keybind = "ctrl+space>semicolon=goto_split:previous"
-
-## tmux-vim-navigate-ify splits
-# keybind = alt+h=goto_split:left
-# keybind = alt+j=goto_split:down
-# keybind = alt+k=goto_split:up
-# keybind = alt+l=goto_split:right
-# keybind = alt+slash=goto_split:previous
-
-## comfort navigate splits
-# keybind = alt+left=goto_split:left
-# keybind = alt+down=goto_split:down
-# keybind = alt+up=goto_split:up
-# keybind = alt+right=goto_split:right
-
 ## Scrollback Hack (open scrollback in $EDITOR)
 # pressing ctrl+f will pipe the scrollback buffer into a
 # file and paste the filepath into the prompt
