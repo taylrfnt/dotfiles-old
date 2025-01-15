@@ -96,7 +96,6 @@
       "keycastr"
       "obs"
       "audio-hijack"
-      #"xquartz"
     ];
 
     brews = [
@@ -104,6 +103,7 @@
       "coreutils"
       "helm"
       "helmfile"
+      "telnet"
     ];
 
     masApps = {
