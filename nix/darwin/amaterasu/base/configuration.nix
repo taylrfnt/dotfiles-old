@@ -33,6 +33,7 @@
       pkgs.oh-my-posh
       pkgs.zsh-vi-mode
       pkgs.zsh-autosuggestions
+      pkgs.ncurses
       pkgs.neovim
       pkgs.tmux
       pkgs.git
@@ -60,6 +61,7 @@
       pkgs.jq
       pkgs.stylua
       pkgs.kubectl
+      pkgs.kitty
     ];
     variables = {
       EDITOR = "nvim";
@@ -104,6 +106,7 @@
       "helm"
       "helmfile"
       "telnet"
+      "asciinema"
     ];
 
     masApps = {
