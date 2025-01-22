@@ -14,6 +14,9 @@
     init = {
       defaultBranch = "main";
     };
+    diff = {
+      tool = "vimdiff";
+    };
   };
 }
 

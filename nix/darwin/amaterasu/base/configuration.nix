@@ -97,6 +97,7 @@
       "oversight"
       "keycastr"
       "obs"
+      "discord@development"
       "audio-hijack"
     ];
 
@@ -215,6 +216,7 @@
           "/System/Applications/TV.app"
           "/System/Applications/Music.app"
           "/System/Applications/News.app"
+          "/Applications/Discord Development.app/"
           "/Applications/Obsidian.app/"
           "/Applications/IINA.app/"
           "/Applications/Ghostty.app"
