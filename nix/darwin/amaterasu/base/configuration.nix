@@ -64,6 +64,7 @@
       pkgs.kitty
       pkgs.go
       pkgs.vesktop
+      pkgs.utm
     ];
     variables = {
       EDITOR = "nvim";
