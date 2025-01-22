@@ -23,6 +23,8 @@ window-width = 150
 
 ## Splits
 focus-follows-mouse = true
+keybind = all:super+equal=increase_font_size:1
+keybind = all:super+minus=decrease_font_size:1
 
 ## Misc
 copy-on-select = clipboard

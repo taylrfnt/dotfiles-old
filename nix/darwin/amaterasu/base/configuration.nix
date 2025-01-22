@@ -62,6 +62,8 @@
       pkgs.stylua
       pkgs.kubectl
       pkgs.kitty
+      pkgs.go
+      pkgs.vesktop
     ];
     variables = {
       EDITOR = "nvim";
