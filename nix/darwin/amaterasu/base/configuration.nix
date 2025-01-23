@@ -63,6 +63,7 @@
       pkgs.kubectl
       pkgs.kitty
       pkgs.go
+      pkgs.postgresql_16
       pkgs.vesktop
       pkgs.utm
     ];
