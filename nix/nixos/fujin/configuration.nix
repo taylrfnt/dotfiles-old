@@ -85,6 +85,7 @@
      git
      dig
      wget
+     stow
      ghostty
   ];
 
