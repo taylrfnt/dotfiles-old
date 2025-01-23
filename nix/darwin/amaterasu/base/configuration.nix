@@ -97,7 +97,7 @@
         name = "ghostty@tip";
         greedy = true;
       }
-      "lulu"
+"lulu"
       "oversight"
       "keycastr"
       "obs"
