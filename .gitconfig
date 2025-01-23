@@ -8,3 +8,7 @@
 	defaultBranch = main
 [diff]
 	tool = vimdiff
+[user]
+	email = taylr.fnt@gmail.com
+	name = taylrfnt
+	signingkey = /home/taylor/keys/github/fujin

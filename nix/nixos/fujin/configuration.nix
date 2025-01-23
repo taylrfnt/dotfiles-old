@@ -40,12 +40,6 @@
     #useXkbConfig = true; # use xkb.options in tty.
   };
 
-  # Fixes for longhorn
-  systemd.tmpfiles.rules = [
-    "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
-  ];
-  virtualisation.docker.logDriver = "json-file";
-
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
@@ -80,13 +74,20 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      neovim
+     libgcc
+     go
+     gopls
+     gofumpt
+     kubectl
+     helm
+     helmfile
      cifs-utils
      nfs-utils
      git
      dig
      wget
      stow
-     ghostty
+     ghostty # install this for terminfo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -102,7 +103,8 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   services.openssh.banner = ''
-	                         .s.s.
+
+                         .s.s.
                       , `'`Y8bso.
                     ,d88bso y'd8l
                     "`,8K j8P?*?b.
