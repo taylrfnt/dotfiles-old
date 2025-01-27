@@ -63,7 +63,9 @@
       pkgs.kubectl
       pkgs.kitty
       pkgs.go
-      pkgs.postgresql_16
+      pkgs.postgresql_17
+      pkgs.sqls
+      pkgs.sqlfluff
       pkgs.vesktop
       pkgs.utm
     ];
@@ -111,7 +113,10 @@
       "helm"
       "helmfile"
       "telnet"
+      "sequin"
       "asciinema"
+      "openjdk@17"
+      "node@23"
     ];
 
     masApps = {

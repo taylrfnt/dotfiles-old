@@ -7,9 +7,16 @@ local options = {
     html = { "prettier" },
     yaml = { "yamlfmt", "yamlfix" },
     java = { "uncrustify" },
-    bash = { "shellcheck", "bash-langauge-server" },
-    zsh = { "shellcheck " },
+    bash = { "shellcheck" },
+    zsh = { "shellcheck" },
     ksh = { "shellcheck" },
+    sql = { "sqlfluff", "sqlfmt", stop_after_first = true },
+  },
+  formatters = {
+    sqlfluff = {
+      args = { "parse", "--dialect=ansi", "-" },
+      require_cwd = false,
+    },
   },
 
   format_on_save = {
@@ -51,4 +58,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 return options
-

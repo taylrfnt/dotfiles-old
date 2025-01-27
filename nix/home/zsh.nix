@@ -86,6 +86,7 @@
   '';
   sessionVariables = {
     CLICOLOR=1;
+    JAVA_HOME="/opt/homebrew/opt/openjdk@17";
   };
 }
 

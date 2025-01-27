@@ -1,6 +1,7 @@
 vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 vim.opt.colorcolumn = "100"
+vim.opt.path:prepend "/opt/homebrew/opt/openjdk@17"
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
