@@ -63,7 +63,9 @@
       pkgs.kubectl
       pkgs.kitty
       pkgs.go
-      pkgs.postgresql_16
+      pkgs.postgresql_17
+      pkgs.sqls
+      pkgs.sqlfluff
       pkgs.vesktop
       pkgs.utm
     ];
@@ -97,7 +99,7 @@
         name = "ghostty@tip";
         greedy = true;
       }
-"lulu"
+      "lulu"
       "oversight"
       "keycastr"
       "obs"

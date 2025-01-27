@@ -4,7 +4,20 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "yamlls", "gopls", "java_language_server", "jsonls", "bashls",  "powershell_es", "groovyls", "dockerls", "marksman" }
+local servers = {
+  "html",
+  "cssls",
+  "yamlls",
+  "gopls",
+  "java_language_server",
+  "jsonls",
+  "bashls",
+  "powershell_es",
+  "groovyls",
+  "dockerls",
+  "marksman",
+  "sqls",
+}
 local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
@@ -22,4 +35,3 @@ end
 --   on_init = nvlsp.on_init,
 --   capabilities = nvlsp.capabilities,
 -- }
-
