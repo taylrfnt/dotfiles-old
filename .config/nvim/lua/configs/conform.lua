@@ -2,15 +2,21 @@ local options = {
   formatters_by_ft = {
     lua = { "stylua" }, -- Lua formatting with Stylua
     go = { "gofumpt" }, -- Go formatting with Gofumpt
-    json = { "vim-prettier", "jq", stop_after_first = true }, -- JSON formatting with Prettier
-    css = { "vim-prettier" },
-    html = { "vim-prettier" },
+    json = { "prettier", "jq", stop_after_first = true }, -- JSON formatting with Prettier
+    css = { "prettier" },
+    html = { "prettier" },
     yaml = { "yamlfmt", "yamlfix" },
     java = { "uncrustify" },
-    bash = { "shellcheck", "bash-langauge-server" },
-    zsh = { "shellcheck " },
+    bash = { "shellcheck" },
+    zsh = { "shellcheck" },
     ksh = { "shellcheck" },
-    sql = { "sqlfluff" },
+    sql = { "sqlfluff", "sqlfmt", stop_after_first = true },
+  },
+  formatters = {
+    sqlfluff = {
+      args = { "parse", "--dialect=ansi", "-" },
+      require_cwd = false,
+    },
   },
 
   format_on_save = {

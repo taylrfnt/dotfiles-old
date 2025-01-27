@@ -9,11 +9,10 @@ local servers = {
   "cssls",
   "yamlls",
   "gopls",
-  "java_language_server",
+  "jdtls",
   "jsonls",
   "bashls",
   "powershell_es",
-  "groovyls",
   "dockerls",
   "marksman",
 }
@@ -27,6 +26,17 @@ for _, lsp in ipairs(servers) do
     capabilities = nvlsp.capabilities,
   }
 end
+
+lspconfig.sqlls.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  cmd = { "sql-language-server", "up", "--method", "stdio" },
+  filetypes = { "sql", "mysql" },
+  root_dir = function()
+    return vim.loop.cwd()
+  end,
+}
 
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
