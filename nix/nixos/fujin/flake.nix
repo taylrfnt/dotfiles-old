@@ -13,8 +13,8 @@
         system = "aarch64-linux";
         modules = with self.nixosModules; [
           ./configuration.nix
-          gnome = (import ./modules/gnome.nix { inherit config pkgs; });
-          home-manager = (import ./modules/home-manager.nix { inherit config pkgs;});
+          ./modules/gnome.nix
+          ./modules/home-manager.nix
         ];
       }
     }
