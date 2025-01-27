@@ -8,6 +8,7 @@
   };
 
   outputs = inputs@{ self, nixpkgs,  ... }: {
+    system = "aarch64-linux";
     nixosModules = {
 
       declarativeHome = { ... }: {
@@ -49,7 +50,6 @@
 
     nixosConfigurations = {
       fujin = {
-        system = "aarch64-linux";
         modules = with self.nixosModules; [
           ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
           home-manager.nixosModules.home-manager
