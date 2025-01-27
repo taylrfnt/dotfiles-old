@@ -11,7 +11,7 @@
     nixosConfigurations = {
       fujin = {
         system = "aarch64-linux";
-        modules = with self.nixosModules; [
+        modules = [
           ./configuration.nix
           ./modules/gnome.nix
           ./modules/home-manager.nix
