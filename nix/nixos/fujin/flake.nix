@@ -51,6 +51,7 @@
     nixosConfigurations = {
       fujin = {
         lib.nixosSystem = {
+          inherit system;
           modules = with self.nixosModules; [
             ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
             home-manager.nixosModules.home-manager
