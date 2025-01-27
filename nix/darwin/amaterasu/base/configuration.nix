@@ -124,6 +124,7 @@
       "Pages" = 409201541;
       "Numbers" = 409203825;
       "Keynote" = 409183694;
+      "Parcel" = 639968404;
     };
 
     onActivation.cleanup = "zap";

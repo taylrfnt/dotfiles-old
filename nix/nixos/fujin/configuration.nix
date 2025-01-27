@@ -87,8 +87,16 @@
      dig
      wget
      stow
-     ghostty # install this for terminfo
+     ghostty
+     tmux
   ];
+
+  fonts = {
+    packages = [
+      pkgs.nerd-fonts.jetbrains-mono
+      pkgs.nerd-fonts.commit-mono
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
