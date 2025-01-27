@@ -16,7 +16,6 @@ local servers = {
   "groovyls",
   "dockerls",
   "marksman",
-  "sqlfluff",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
