@@ -7,9 +7,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs,  ... }
-  let
-  in {
+  outputs = inputs@{ self, nixpkgs,  ... }: {
     nixosModules = {
 
       declarativeHome = { ... }: {
@@ -61,7 +59,7 @@
       };
     };
 
-
   };
+
 }
 
