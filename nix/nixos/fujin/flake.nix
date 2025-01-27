@@ -50,7 +50,7 @@
 
     nixosConfigurations = {
       fujin = {
-        lib.nixosSystem {
+        lib.nixosSystem = {
           modules = with self.nixosModules; [
             ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
             home-manager.nixosModules.home-manager
