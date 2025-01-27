@@ -113,7 +113,10 @@
       "helm"
       "helmfile"
       "telnet"
+      "sequin"
       "asciinema"
+      "openjdk@17"
+      "node@23"
     ];
 
     masApps = {
