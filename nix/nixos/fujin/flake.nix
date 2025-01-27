@@ -16,10 +16,8 @@
           ./modules/gnome.nix
           ./modules/home-manager.nix
         ];
-      }
-    }
-
+      };
+    };
   };
-
 }
 
