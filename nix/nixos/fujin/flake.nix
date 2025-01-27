@@ -3,32 +3,65 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    # Disko
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, disko, ... }@inputs: let
-    nodes = [
-      "fujin"
-    ];
+  outputs = { self, nixpkgs,  ... }
+  let
   in {
-    nixosConfigurations = builtins.listToAttrs (map (name: {
-	    name = name;
-	    value = nixpkgs.lib.nixosSystem {
-     	    specialArgs = {
-            meta = { hostname = name; };
-          };
-          system = "x86_64-linux";
-          modules = [
-              # Modules
-	            disko.nixosModules.disko
-	            ./hardware-configuration.nix
-	            ./disko-config.nix
-	            ./configuration.nix
-	          ];
+    nixosModules = {
+
+      declarativeHome = { ... }: {
+        config = {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.taylor = import ./home.nix;
         };
-    }) nodes);
+      };
+
+      gnome = { pkgs, ... }: {
+        config = {
+          services = {
+            xserver = {
+              enable = true;
+              displayManager.gdm.enable = true;
+              desktopManager.gnome.enable = true;
+            };
+          };
+          environment = {
+            gnome = {
+              excludePackages = (with pkgs; [
+                gnome-photos
+                gnome-tour
+              ]) ++ (with pkgs.gnome; [
+                gnome-characters
+                gnome-initial-setup
+              ]);
+            };
+            systemPackages = with pkgs; [
+              gnome.gnome-tweaks
+            ];
+          };
+          programs.dconf.enable = true;
+        };
+      };
+
+    };
+
+    nixosConfigurations = {
+      fujin = {
+        system = "aarch64-linux";
+        modules = with self.nixosModules; [
+          ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
+          home-manager.nixosModules.home-manager
+          gnome
+          declarativeHome
+        ];
+      };
+    };
+
+
   };
 }
 
