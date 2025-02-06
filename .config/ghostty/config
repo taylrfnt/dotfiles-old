@@ -11,6 +11,7 @@ title = " "
 # config-file = ?./catppuccin-mocha
 
 ## Fonts
+font-family = Test Font
 font-family = CommitMono Nerd Font
 font-feature = +cv07
 font-size = 16
@@ -36,6 +37,7 @@ window-save-state = default
 # fix tmux-vim-navigate
 keybind = alt+right=unbind
 keybind = alt+left=unbind
+keybind = global:shift+super+t=toggle_quick_terminal
 
 ## Scrollback Hack (open scrollback in $EDITOR)
 # pressing ctrl+f will pipe the scrollback buffer into a

@@ -17,7 +17,7 @@
       extra-platforms = x86_64-darwin aarch64-darwin
     '';
     ## Linux builder provided by NixOS VM that works on Apple Silicon & Intel Macs
-    linux-builder.enable = true;
+    # linux-builder.enable = true;
     ## Necessary for using flakes on this system.
     settings.experimental-features = "nix-command flakes";
   };
@@ -61,6 +61,7 @@
       pkgs.jq
       pkgs.stylua
       pkgs.kubectl
+      pkgs.k9s
       pkgs.kitty
       pkgs.go
       pkgs.postgresql_17
@@ -94,6 +95,7 @@
       "bitwarden"
       "thunderbird"
       "obsidian"
+      # "ghostty"
       # make ghostty greedy since we use tip instead of main/stable
       {
         name = "ghostty@tip";
@@ -103,9 +105,10 @@
       "oversight"
       "keycastr"
       "obs"
-      "discord@development"
       "audio-hijack"
-    ];
+      "steam"
+      "deskpad"
+     ];
 
     brews = [
       "mas" # needs xcode-select (TODO: find automated install)
@@ -117,6 +120,7 @@
       "asciinema"
       "openjdk@17"
       "node@23"
+      "ripgrep"
     ];
 
     masApps = {
@@ -226,7 +230,7 @@
           "/System/Applications/TV.app"
           "/System/Applications/Music.app"
           "/System/Applications/News.app"
-          "/Applications/Discord Development.app/"
+          "/Applications/Nix Apps/Vesktop.app"
           "/Applications/Obsidian.app/"
           "/Applications/IINA.app/"
           "/Applications/Ghostty.app"
