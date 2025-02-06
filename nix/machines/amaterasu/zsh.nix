@@ -22,6 +22,9 @@
     # https://superuser.com/questions/997593/why-does-zsh-insert-a-when-i-press-the-delete-key/1078653#1078653
     bindkey "^[[3~" delete-char
 
+    ## ghostty fix
+    export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
+
     ############################################################################
     #                             VISUAL & PROMPT                              #
     ############################################################################
