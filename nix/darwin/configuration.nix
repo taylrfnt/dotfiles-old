@@ -121,6 +121,7 @@
       "openjdk@17"
       "node@23"
       "ripgrep"
+      "zig"
     ];
 
     masApps = {
@@ -129,6 +130,7 @@
       "Numbers" = 409203825;
       "Keynote" = 409183694;
       "Parcel" = 639968404;
+      "Xcode" = 497799835;
     };
 
     onActivation.cleanup = "zap";
