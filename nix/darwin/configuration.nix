@@ -148,7 +148,7 @@
 
     raycast = {
       serviceConfig.ProgramArguments =
-        [ "${pkgs.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
+        [ "${pkgs-master.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
       serviceConfig.RunAtLoad = true;
     };
 
