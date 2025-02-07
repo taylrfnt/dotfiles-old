@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-master, ... }:
 
 {
   nixpkgs = {
@@ -41,7 +41,7 @@
       pkgs.gh
       pkgs.pass
       pkgs.gnupg
-      pkgs.raycast
+      pkgs-master.raycast
       pkgs.maccy
       pkgs.bruno
       pkgs.mkalias # nix needs to make darwin aliases rather than symlinks for apps
