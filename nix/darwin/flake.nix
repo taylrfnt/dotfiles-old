@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    # nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
@@ -15,7 +15,7 @@
     self,
     nix-darwin,
     nixpkgs,
-    nixpkgs-master,
+    # nixpkgs-master,
     nix-homebrew,
     home-manager,
     ...
@@ -23,12 +23,12 @@
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#<flake-name>
       darwinConfigurations."amaterasu" = nix-darwin.lib.darwinSystem {
-        specialArgs = {
-          pkgs-master = import nixpkgs-master {
-            system = "aarch64-darwin";
-            config.allowUnfree = true;
-          };
-        };
+        # specialArgs = {
+        #   pkgs-master = import nixpkgs-master {
+        #     system = "aarch64-darwin";
+        #     config.allowUnfree = true;
+        #   };
+        # };
         modules = [
           ./configuration.nix
           nix-homebrew.darwinModules.nix-homebrew

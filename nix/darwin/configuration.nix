@@ -1,4 +1,5 @@
-{ config, pkgs, pkgs-master, ... }:
+{ config, pkgs, ... }:
+#{ config, pkgs, pkgs-master, ... }:
 
 {
   nixpkgs = {
@@ -41,7 +42,7 @@
       pkgs.gh
       pkgs.pass
       pkgs.gnupg
-      pkgs-master.raycast
+      pkgs.raycast
       pkgs.maccy
       pkgs.bruno
       pkgs.mkalias # nix needs to make darwin aliases rather than symlinks for apps
@@ -53,7 +54,7 @@
       pkgs.gofumpt
       pkgs.prettierd
       pkgs.yaml-language-server
-      pkgs.yamlfix
+      #pkgs.yamlfix
       pkgs.yamlfmt
       pkgs.shellcheck
       pkgs.uncrustify
@@ -150,7 +151,8 @@
 
     raycast = {
       serviceConfig.ProgramArguments =
-        [ "${pkgs-master.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
+        [ "${pkgs.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
+        # [ "${pkgs-master.raycast}/Applications/Raycast.app/Contents/MacOS/Raycast" ];
       serviceConfig.RunAtLoad = true;
     };
 
