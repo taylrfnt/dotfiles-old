@@ -30,14 +30,14 @@ copy-on-select = clipboard
 confirm-close-surface = false
 quit-after-last-window-closed = true
 window-save-state = default
-keybind = ctrl+q=next_tab
+mouse-hide-while-typing = true
+
 
 ## Keybinds
 # fix tmux-vim-navigate
 keybind = alt+right=unbind
 keybind = alt+left=unbind
 keybind = global:shift+super+t=toggle_quick_terminal
-keybind = global:shift+super+v=toggle_visibility
 
 ## Scrollback Hack (open scrollback in $EDITOR)
 # pressing ctrl+f will pipe the scrollback buffer into a
