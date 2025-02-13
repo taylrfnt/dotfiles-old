@@ -48,28 +48,17 @@
       pkgs.mkalias # nix needs to make darwin aliases rather than symlinks for apps
       pkgs.openssh
       pkgs.yt-dlp
-      pkgs.lua-language-server
-      pkgs.gopls
-      pkgs.marksman
-      pkgs.gofumpt
-      pkgs.prettierd
-      pkgs.yaml-language-server
-      #pkgs.yamlfix
-      pkgs.yamlfmt
-      pkgs.shellcheck
       pkgs.uncrustify
-      pkgs.bash-language-server
-      pkgs.jq
-      pkgs.stylua
       pkgs.kubectl
       pkgs.k9s
       pkgs.kitty
       pkgs.go
       pkgs.postgresql_17
-      pkgs.sqls
-      pkgs.sqlfluff
       pkgs.vesktop
       pkgs.utm
+      pkgs.tree-sitter
+      pkgs.nixd
+      pkgs.deadnix
     ];
     variables = {
       EDITOR = "nvim";
