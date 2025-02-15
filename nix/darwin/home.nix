@@ -15,12 +15,9 @@ in
 
   xdg = {
     enable = true;
-    cacheHome = "~/.cache";
-    configHome = "~/.config";
     configFile = {
       nvim.source = mkOutOfStoreSymlink "~/dotfiles/.config/nvim";
     };
-    stateHome = "~/.local/state";
   };
 
   programs = {

@@ -2,7 +2,7 @@
 
 {
   enable = true;
-  alias = {
+  aliases = {
     dp = "deployments";
     sec = "v1/secrets";
     jo =  "jobs";
