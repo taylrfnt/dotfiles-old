@@ -15,15 +15,24 @@ in
 
   xdg = {
     enable = true;
-    configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/.config/nvim";
+    cacheHome = "~/.cache";
+    configHome = "~/.config";
+    configFile = {
+      nvim.source = mkOutOfStoreSymlink "~/dotfiles/.config/nvim";
+    };
+    stateHome = "~/.local/state";
   };
 
   programs = {
-    tmux = (import ../home/tmux.nix { inherit config pkgs; });
-    git = (import ../machines/amaterasu/git.nix { inherit config pkgs; });
-    neovim = (import ../home/neovim.nix { inherit config pkgs; });
+    # import our machine-specific modules first
     zsh = (import ../machines/amaterasu/zsh.nix { inherit config pkgs; });
+    git = (import ../machines/amaterasu/git.nix { inherit config pkgs; });
+    ## and our generic modules 
+    tmux = (import ../home/tmux.nix { inherit config pkgs; });
+    neovim = (import ../home/neovim.nix { inherit config pkgs; });
     kitty = (import ../home/kitty.nix { inherit config pkgs; });
+    k9s = (import ../home/k9s/k9s.nix {inherit config pkgs; });
+    yt-dlp = (import ../home/yt-dlp.nix {inherit config pkgs;});
   };
 }
 

@@ -22,9 +22,10 @@
     ## Necessary for using flakes on this system.
     settings.experimental-features = "nix-command flakes";
   };
-
+  
+  # Removed in latest nix-darwin upgrade (nix.enable = true as default)
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
