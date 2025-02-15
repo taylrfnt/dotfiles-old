@@ -28,6 +28,7 @@ in
     kitty = (import ../home/kitty.nix { inherit config pkgs; });
     k9s = (import ../home/k9s/k9s.nix {inherit config pkgs; });
     yt-dlp = (import ../home/yt-dlp.nix {inherit config pkgs;});
+    alacritty = (import ../home/alacritty.nix {inherit config pkgs;});
   };
 }
 

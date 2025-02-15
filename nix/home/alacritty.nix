@@ -5,6 +5,7 @@
   settings = {
     general = {
       live_config_reload = true;
+      import = [ "${pkgs.alacritty-theme}/catppuccin_mocha.toml"];
     };
 
     bell = {
@@ -55,19 +56,21 @@
 
     mouse = {
       hide_when_typing = true;
-      bindings = {
-        action = "PasteSelection";
-        mouse = "Middle";
-      };
+      bindings = [
+        {
+          action = "PasteSelection";
+          mouse = "Middle";
+        }
+      ];
     };
 
 
     selection = {
-      semantic_escape_chars = '',│`|:\"' ()[]{}<>'';
+      semantic_escape_chars = ",│`|:\"' ()[]{}<>";
     };
 
     terminal = {
-      shell = "${pkgs.zsh}";
+      shell = "/bin/zsh";
     };
 
     window = {

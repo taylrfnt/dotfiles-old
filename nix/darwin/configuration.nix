@@ -54,6 +54,7 @@
       pkgs.k9s
       pkgs.kitty
       pkgs.alacritty
+      pkgs.alacritty-theme
       pkgs.go
       pkgs.postgresql_17
       pkgs.vesktop
