@@ -226,7 +226,7 @@
           "/System/Applications/TV.app"
           "/System/Applications/Music.app"
           "/System/Applications/News.app"
-          "/Applications/Nix Apps/Vesktop.app"
+          "${pkgs.vesktop}/Applications/Vesktop.app"
           "/Applications/Obsidian.app/"
           "/Applications/IINA.app/"
           "/Applications/Ghostty.app"
