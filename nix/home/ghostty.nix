@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  enable = true;
+  enable = false;
   ## See https://ghostty.org/docs/config for official docs & option
   ## sets or run `ghostty +list-configuration --default`
   enableZshIntegration = true;
