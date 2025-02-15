@@ -15,7 +15,7 @@ in
 
   xdg = {
     enable = true;
-    configFile.nvim.source = mkOutOfStoreSymlink "~/dotfiles/.config/nvim";
+    configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/.config/nvim";
   };
 
   programs = {
