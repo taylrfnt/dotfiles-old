@@ -7,15 +7,7 @@
     vim = "nvim";
     ls = "ls -altr";
     k = "kubectl";
-    yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/yt-dlp.conf";
-  };
-  autosuggestion = {
-    enable = false;
-    highlight = "fg=#646A6C";
-    strategy = [
-      "completion"
-      "history"
-    ];
+    yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/config";
   };
   initExtra = ''
     # fixing delete key
