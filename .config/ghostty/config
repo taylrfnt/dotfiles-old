@@ -18,8 +18,8 @@ font-thicken = true
 adjust-cell-height = 15%
 
 ## Default Window Dimensions
-window-height = 35
-window-width = 150
+window-height = 60
+window-width = 160
 
 ## Splits
 focus-follows-mouse = true
