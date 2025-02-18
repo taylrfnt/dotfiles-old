@@ -8,6 +8,8 @@
     ls = "ls -altr";
     k = "kubectl";
     yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/config";
+    # k9s fix (https://github.com/derailed/k9s/issues/3049)
+    k9s = "TERM=xterm-256color k9s";
   };
   initExtra = ''
     # fixing delete key
@@ -16,6 +18,7 @@
 
     ## ghostty fix
     export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
+
 
     ############################################################################
     #                             VISUAL & PROMPT                              #
