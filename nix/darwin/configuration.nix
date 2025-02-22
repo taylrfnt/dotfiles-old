@@ -22,9 +22,10 @@
     ## Necessary for using flakes on this system.
     settings.experimental-features = "nix-command flakes";
   };
-
+  
+  # Removed in latest nix-darwin upgrade (nix.enable = true as default)
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
+  # services.nix-daemon.enable = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -48,28 +49,21 @@
       pkgs.mkalias # nix needs to make darwin aliases rather than symlinks for apps
       pkgs.openssh
       pkgs.yt-dlp
-      pkgs.lua-language-server
-      pkgs.gopls
-      pkgs.marksman
-      pkgs.gofumpt
-      pkgs.prettierd
-      pkgs.yaml-language-server
-      #pkgs.yamlfix
-      pkgs.yamlfmt
-      pkgs.shellcheck
       pkgs.uncrustify
-      pkgs.bash-language-server
-      pkgs.jq
-      pkgs.stylua
       pkgs.kubectl
       pkgs.k9s
       pkgs.kitty
+      pkgs.alacritty
+      pkgs.alacritty-theme
       pkgs.go
       pkgs.postgresql_17
-      pkgs.sqls
-      pkgs.sqlfluff
       pkgs.vesktop
       pkgs.utm
+      pkgs.tree-sitter
+      pkgs.nixd
+      pkgs.deadnix
+      pkgs.ripgrep
+      pkgs.fzf
     ];
     variables = {
       EDITOR = "nvim";
@@ -121,7 +115,6 @@
       "asciinema"
       "openjdk@17"
       "node@23"
-      "ripgrep"
       "zig"
     ];
 
@@ -234,7 +227,7 @@
           "/System/Applications/TV.app"
           "/System/Applications/Music.app"
           "/System/Applications/News.app"
-          "/Applications/Nix Apps/Vesktop.app"
+          "${pkgs.vesktop}/Applications/Vesktop.app"
           "/Applications/Obsidian.app/"
           "/Applications/IINA.app/"
           "/Applications/Ghostty.app"

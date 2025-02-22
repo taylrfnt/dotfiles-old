@@ -11,7 +11,6 @@ title = " "
 # config-file = ?./catppuccin-mocha
 
 ## Fonts
-font-family = Test Font
 font-family = CommitMono Nerd Font
 font-feature = +cv07
 font-size = 16
@@ -19,8 +18,8 @@ font-thicken = true
 adjust-cell-height = 15%
 
 ## Default Window Dimensions
-window-height = 35
-window-width = 150
+window-height = 60
+window-width = 160
 
 ## Splits
 focus-follows-mouse = true
@@ -34,10 +33,13 @@ mouse-hide-while-typing = true
 
 
 ## Keybinds
-# fix tmux-vim-navigate
 keybind = alt+right=unbind
 keybind = alt+left=unbind
-keybind = global:shift+super+t=toggle_quick_terminal
+keybind = global:shift+super+t=toggle_visibility
+keybind = super+shift+left=resize_split:left,10
+keybind = super+shift+right=resize_split:right,10
+keybind = super+shift+up=resize_split:up,10
+keybind = super+shift+down=resize_split:down,10
 
 ## Scrollback Hack (open scrollback in $EDITOR)
 # pressing ctrl+f will pipe the scrollback buffer into a
@@ -45,4 +47,3 @@ keybind = global:shift+super+t=toggle_quick_terminal
 keybind = ctrl+f=write_scrollback_file:paste
 # now press super+f to open in your editor!
 keybind = "super+f=text:\x1b[H ${EDITOR} \n"
-

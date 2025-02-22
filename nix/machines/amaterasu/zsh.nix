@@ -7,15 +7,9 @@
     vim = "nvim";
     ls = "ls -altr";
     k = "kubectl";
-    yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/yt-dlp.conf";
-  };
-  autosuggestion = {
-    enable = false;
-    highlight = "fg=#646A6C";
-    strategy = [
-      "completion"
-      "history"
-    ];
+    yt-dlp = "yt-dlp --config-location ~/.config/yt-dlp/config";
+    # k9s fix (https://github.com/derailed/k9s/issues/3049)
+    k9s = "TERM=xterm-256color k9s";
   };
   initExtra = ''
     # fixing delete key
@@ -71,8 +65,8 @@
     source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
     source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   '';
-  #sessionVariables = {
-  #  CLICOLOR=1;
-  #};
+  sessionVariables = {
+    CLICOLOR=1;
+  };
 }
 
