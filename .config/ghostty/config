@@ -33,10 +33,13 @@ mouse-hide-while-typing = true
 
 
 ## Keybinds
-# fix tmux-vim-navigate
 keybind = alt+right=unbind
 keybind = alt+left=unbind
-keybind = global:shift+super+t=toggle_quick_terminal
+keybind = global:shift+super+t=toggle_visibility
+keybind = super+shift+left=resize_split:left,10
+keybind = super+shift+right=resize_split:right,10
+keybind = super+shift+up=resize_split:up,10
+keybind = super+shift+down=resize_split:down,10
 
 ## Scrollback Hack (open scrollback in $EDITOR)
 # pressing ctrl+f will pipe the scrollback buffer into a

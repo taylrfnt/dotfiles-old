@@ -62,6 +62,8 @@
       pkgs.tree-sitter
       pkgs.nixd
       pkgs.deadnix
+      pkgs.ripgrep
+      pkgs.fzf
     ];
     variables = {
       EDITOR = "nvim";
@@ -113,7 +115,6 @@
       "asciinema"
       "openjdk@17"
       "node@23"
-      "ripgrep"
       "zig"
     ];
 

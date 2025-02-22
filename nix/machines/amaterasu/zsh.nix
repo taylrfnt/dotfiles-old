@@ -19,7 +19,6 @@
     ## ghostty fix
     export PATH="''${PATH}:''${GHOSTTY_BIN_DIR}"
 
-
     ############################################################################
     #                             VISUAL & PROMPT                              #
     ############################################################################
@@ -66,8 +65,8 @@
     source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
     source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   '';
-  #sessionVariables = {
-  #  CLICOLOR=1;
-  #};
+  sessionVariables = {
+    CLICOLOR=1;
+  };
 }
 
