@@ -39,6 +39,7 @@
       pkgs.neovim
       pkgs.tmux
       pkgs.git
+      pkgs.lazygit
       pkgs.stow
       pkgs.gh
       pkgs.pass
