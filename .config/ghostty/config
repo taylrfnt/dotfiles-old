@@ -7,8 +7,6 @@ window-colorspace = display-p3
 split-divider-color = #585b70
 macos-titlebar-proxy-icon = hidden
 title = " "
-# backup of mocha
-# config-file = ?./catppuccin-mocha
 
 ## Fonts
 font-family = CommitMono Nerd Font
@@ -30,7 +28,6 @@ confirm-close-surface = false
 quit-after-last-window-closed = true
 window-save-state = default
 mouse-hide-while-typing = true
-
 
 ## Keybinds
 keybind = alt+right=unbind

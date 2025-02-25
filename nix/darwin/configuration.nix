@@ -64,6 +64,7 @@
       pkgs.deadnix
       pkgs.ripgrep
       pkgs.fzf
+      pkgs.pandoc
     ];
     variables = {
       EDITOR = "nvim";
