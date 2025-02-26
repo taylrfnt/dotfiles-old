@@ -16,6 +16,7 @@ in
   xdg = {
     enable = true;
     configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/.config/nvim";
+    configFile.ghostty.source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/.config/ghostty";
   };
 
   programs = {

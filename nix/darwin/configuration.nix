@@ -266,7 +266,7 @@
         AppleInterfaceStyle = "Dark";
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticInlinePredictionEnabled = false;
-        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = true;
         NSDocumentSaveNewDocumentsToCloud = false;
         NSWindowShouldDragOnGesture = true;
       };
