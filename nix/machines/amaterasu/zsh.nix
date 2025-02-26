@@ -23,7 +23,7 @@
     #                             VISUAL & PROMPT                              #
     ############################################################################
     ## oh-my-posh
-    eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+    #eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/zen.json)"
 
     # OMP zsh-vi-mode integration
     bindkey -v

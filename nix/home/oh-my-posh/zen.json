@@ -1,0 +1,145 @@
+{
+  "console_title_template": "{{.UserName}}@{{.HostName}}",
+  "version": 3,
+  "final_space": true,
+  "secondary_prompt": {
+    "template": "❯❯ ",
+    "foreground": "magenta",
+    "background": "transparent"
+  },
+  "transient_prompt": {
+    "template": "❯ ",
+    "background": "transparent",
+    "foreground_templates": [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}magenta{{end}}"
+    ]
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "os",
+          "style": "plain",
+          "foreground": "#cdd6f4",
+          "backgreund": "transparent",
+          "template": "{{ if .WSL }}WSL at {{end}}{{.Icon}} "
+        },
+        {
+          "template": "{{.UserName}}@{{.HostName}} :: {{ .Path }}",
+          "foreground": "blue",
+          "background": "transparent",
+          "type": "path",
+          "style": "plain",
+          "properties": {
+            "cache_duration": "none",
+            "style": "full"
+          }
+        },
+        {
+          "template": " {{ if .Env.POSH_VI_MODE }}{{ .Env.POSH_VI_MODE }}{{ end }}",
+          "foreground": "#f38ba8",
+          "background": "transparent",
+          "type": "text",
+          "style": "plain"
+        },
+        {
+          "template": " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>",
+          "foreground": "p:grey",
+          "background": "transparent",
+          "type": "git",
+          "style": "plain",
+          "properties": {
+            "branch_icon": "",
+            "cache_duration": "none",
+            "commit_icon": "@",
+            "fetch_status": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "overflow": "hidden",
+      "segments": [
+        {
+          "template": "{{ .FormattedMs }}",
+          "foreground": "yellow",
+          "background": "transparent",
+          "type": "executiontime",
+          "style": "plain",
+          "properties": {
+            "cache_duration": "none",
+            "threshold": 5000
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "template": "❯",
+          "background": "transparent",
+          "type": "text",
+          "style": "plain",
+          "foreground_templates": [
+            "{{if gt .Code 0}}red{{end}}",
+            "{{if eq .Code 0}}magenta{{end}}"
+          ],
+          "properties": {
+            "cache_duration": "none"
+          }
+        }
+      ]
+    }
+  ],
+  "tooltips": [
+    {
+      "leading_diamond": "",
+      "trailing_diamond": "",
+      "template": " {{ if .Name }} {{ .Name }}{{ else }} 󰭙 {{ end }}",
+      "foreground": "#193549",
+      "background": "#abc5fe",
+      "type": "az",
+      "style": "diamond",
+      "tips": [
+        "az"
+      ],
+      "properties": {
+        "source": "cli"
+      }
+    },
+    {
+      "leading_diamond": "",
+      "trailing_diamond": "",
+      "template": "󰠳 {{ .Context }}{{ if .Namespace }} :: {{ .Namespace }}{{ end }}",
+      "foreground": "#193549",
+      "background": "#1352ab",
+      "type": "kubectl",
+      "style": "diamond",
+      "tips": [
+        "kubectl",
+        "k"
+      ]
+    },
+    {
+      "leading_diamond": "",
+      "trailing_diamond": "",
+      "template": "Helm {{ .Version }}",
+      "foreground": "#193549",
+      "background": "#a7cae1",
+      "type": "helm",
+      "style": "diamond",
+      "tips": [
+        "helm",
+        "helmfile"
+      ]
+    }
+  ]
+}
