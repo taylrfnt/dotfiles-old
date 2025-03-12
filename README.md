@@ -1,81 +1,35 @@
-# dotfiles
-This repository contains all of my dotfiles used to efficiently & repeatably customize an
-environment on any machine.
+# What is this Repository?
+This repository is a one-stop-shop for all of my dotfiles (aka system configuration) for the various machines I use.
+All of my system configurations are declarative, using [Nix](https://nixos.org/download/).
 
-## Requirements
-To use this repository to quickly configure a fresh OS/system, you need the following installed:
-* [git](https://git-scm.com/)
-* [GNU Stow](https://www.gnu.org/software/stow/)
-* A package manager for your OS to install the packages these dotfiles house configuration for (`nix`, `brew`, `pacman`, etc.)
+This allows for me to easily recreate my environment on a new machine with minimal effort, and offers me a declarative
+solution for configuration that can be cross-referenced later.
 
-### git
-**macOS (homebrew)**
-```
-brew install git
-```
-**Arch**
-```
-pacman -S git
-```
+# A Few Disclaimers
+There is still a `.config` directory in this repository.  I have somewhat cheated the Nix implementation for two programs:
+- Ghostty
+- Neovim
 
-**NixOS (nix)**
-```
-environment.systemPackages =
-        [ pkgs.git
-          ...
-        ];
+For Ghostty, since the build is broken on Darwin systems (for a variety of reasons), you cannot directly implement Ghostty
+configurations in Nix without a larger effort that frankly I do not wish to undertake.  My Neovim configuration is written
+in Lua, and I still find myself changing it semi-regularly, so importing those config files makes the most sense for me currently.
+I might migrate neovim to a fully-managed configuration in Nix someday once I settle down on a configuration I feel meets my needs.
 
-```
-
-### GNU Stow
-**macOS**
-```
-brew install stow
-```
-**Arch**
-```
-pacman -S stow
-```
-**NixOS (nix)**
-```
-environment.systemPackages =
-        [ pkgs.stow
-          ...
-        ];
-
-```
-
-
-## Packages & Apps
-This repo contains custom configuration for the following apps/packages:
-* alacritty
-* kitty
-* neofetch
-* neovim
-* ohmyposh
-* tmux
-* yt-dlp
-
-The configuration files within can be installed with or without these apps/packages installed; however, it's
-best to install them prior to any installation attempts to avoid any future headaches.
-
-## Using this repo's dotfiles
+# Using this repo's dotfiles
 1. Check out this `dotfiles` repo in your `$HOME` directory using git:
 ```
-$ mkdir -p ~/dotfiles
-$ git clone ${REPO_URL} ~/dotfiles
+mkdir -p ~/dotfiles && git clone ${REPO_URL} ~/dotfiles
 ```
 2. Navigate into the freshly cloned directory:
 ```
 cd ~/dotfiles
 ```
-3. If you wish to remove certain configurations, do so now, otherwise they will be symlinked and more difficult to remove.
-4. Use GNU Stow to construct the symlink farm:
+3. Run a nix system rebuild and switch to the desired flake:
+**macOS**
+```bash
+nix run nix-darwin --extra-experimental-features "nix-command flakes" --switch --flake ~/dotfiles/nix/${HOST_ARCH}#${FLAKE_NAME}
 ```
-$ stow --adopt .
+**Linux**
+```bash
+tbd
 ```
-
-## References
-Elliott at Dreams of Autonomy has a great video guide on using stow/dotfiles repo:
-* [Stow has forever changed the way I manage my dotfiles](https://www.youtube.com/watch?v=y6XCebnB9gs)
-

@@ -29,6 +29,3 @@ Temporary Items
 # k3s
 .kube
 
-# tmux (managed by nix)
-.config/tmux
-
