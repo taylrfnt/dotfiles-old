@@ -5,8 +5,7 @@
   userName = "taylrfnt";
   userEmail = "taylr.fnt@gmail.com";
   signing.signByDefault = true;
-  signing.key = "~/keys/github/amaterasu_ed25519";
-
+  signing.key = "~/keys/ssh/github/amaterasu";
   extraConfig = {
     pull = {
       rebase = true;
@@ -16,6 +15,9 @@
     };
     diff = {
       tool = "vimdiff";
+    };
+    gpg = {
+      format = "ssh";
     };
   };
 }

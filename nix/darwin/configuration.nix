@@ -264,6 +264,7 @@
       NSGlobalDomain = {
         AppleICUForce24HourTime = true;
         AppleInterfaceStyle = "Dark";
+        "com.apple.swipescrolldirection" = false;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticInlinePredictionEnabled = false;
         NSAutomaticPeriodSubstitutionEnabled = true;
