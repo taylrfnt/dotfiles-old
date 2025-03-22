@@ -66,6 +66,8 @@
       pkgs.ripgrep
       pkgs.fzf
       pkgs.pandoc
+      pkgs.zig_0_13
+      pkgs.zig_0_14
     ];
     variables = {
       EDITOR = "nvim";
@@ -117,7 +119,7 @@
       "asciinema"
       "openjdk@17"
       "node@23"
-      "zig"
+      # "zig"
     ];
 
     masApps = {
