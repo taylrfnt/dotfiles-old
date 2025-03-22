@@ -66,7 +66,6 @@
       pkgs.ripgrep
       pkgs.fzf
       pkgs.pandoc
-      pkgs.zig_0_13
       pkgs.zig_0_14
     ];
     variables = {
