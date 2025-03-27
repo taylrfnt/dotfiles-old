@@ -209,7 +209,10 @@
 
     #MacOS system configuration
     defaults = {
-      ".GlobalPreferences"."com.apple.sound.beep.sound" = "/System/Library/Sounds/Blow.aiff";
+      ".GlobalPreferences" = {
+        "com.apple.mouse.scaling" = 1.0;
+        "com.apple.sound.beep.sound" = "/System/Library/Sounds/Blow.aiff";
+      };
       dock = {
         autohide = true;
         autohide-delay = 0.0; # no delay for auto-hide/show
