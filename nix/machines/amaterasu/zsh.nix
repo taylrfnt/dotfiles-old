@@ -11,7 +11,7 @@
     # k9s fix (https://github.com/derailed/k9s/issues/3049)
     k9s = "TERM=xterm-256color k9s";
   };
-  initExtra = ''
+  initContent = ''
     # fixing delete key
     # https://superuser.com/questions/997593/why-does-zsh-insert-a-when-i-press-the-delete-key/1078653#1078653
     bindkey "^[[3~" delete-char
@@ -64,7 +64,7 @@
     }
     source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
     source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  '';
+    '';
   sessionVariables = {
     CLICOLOR=1;
   };

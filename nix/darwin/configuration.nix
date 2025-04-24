@@ -33,6 +33,7 @@
     systemPackages = [
       pkgs.zsh
       pkgs.oh-my-posh
+      pkgs.eza
       pkgs.zsh-vi-mode
       pkgs.zsh-autosuggestions
       pkgs.ncurses
