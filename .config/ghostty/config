@@ -28,11 +28,12 @@ confirm-close-surface = false
 quit-after-last-window-closed = true
 window-save-state = default
 mouse-hide-while-typing = true
+macos-non-native-fullscreen = true
 
 ## Keybinds
 keybind = alt+right=unbind
 keybind = alt+left=unbind
-keybind = global:super+alt+ctrl+shift+grave_accent=toggle_quick_terminal
+keybind = global:super+shift+alt+grave_accent=toggle_quick_terminal
 keybind = super+shift+left=resize_split:left,10
 keybind = super+shift+right=resize_split:right,10
 keybind = super+shift+up=resize_split:up,10

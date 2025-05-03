@@ -67,6 +67,7 @@
       pkgs.ripgrep
       pkgs.fzf
       pkgs.pandoc
+      # pkgs.zig_0_13
       pkgs.zig_0_14
     ];
     variables = {
@@ -129,6 +130,7 @@
       "Keynote" = 409183694;
       "Parcel" = 639968404;
       "Xcode" = 497799835;
+      "Final Cut Pro" = 424389933;
     };
 
     onActivation.cleanup = "zap";
