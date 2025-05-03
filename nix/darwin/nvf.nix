@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+## TODO: add smart-splits.nvim (https://github.com/AstroNvim/AstroNvim/blob/170e9cd4bf7c17ec963141399f4b0a32aa694868/lua/astronvim/plugins/smart-splits.lua#L12)
+{
+  pkgs,
+  # lib,
+  ...
+}: {
   programs.nvf = {
     enable = true;
     settings = {
@@ -12,10 +17,9 @@
         viAlias = false;
         vimAlias = true;
 
-        # lazy.plugins.crates-nvim = {
-        #   package = "crates-nvim";
-        #   setupOpts = {
-        #     curl_args = ["--cacerts" "/etc/ssl/certs/ca-certificates.crt"];
+        # highlight = {
+        #   CursorLineNr = {
+        #     fg = "#ccd0da";
         #   };
         # };
 
@@ -28,6 +32,22 @@
             silent = true;
             action = ":Neotree toggle<CR>";
             desc = "Toggle Explorer";
+          }
+          {
+            key = "<leader>o";
+            mode = "n";
+            silent = true;
+            lua = true;
+            action = ''
+              function()
+                if vim.bo.filetype == "neo-tree" then
+                  vim.cmd.wincmd "p"
+                else
+                  vim.cmd.Neotree "focus"
+                end
+              end
+            '';
+            desc = "Toggle Explorer Focus";
           }
           # easy quit keymap
           {
@@ -96,6 +116,26 @@
           vim.opt.list = true
         '';
 
+        lazy.plugins = {
+          "nvim-lspconfig" = {
+            package = pkgs.vimPlugins.nvim-lspconfig;
+            setupModule = "lspconfig";
+            setupOpts = {
+              opts = {
+                diagnostics = {
+                  signs = {
+                    text = {
+                      "[vim.diagnostic.severity.ERROR]" = " ";
+                      "[vim.diagnostic.severity.WARN]" = " ";
+                      "[vim.diagnostic.severity.INFO]" = " ";
+                      "[vim.diagnostic.severity.HINT]" = "󰌵";
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
         lsp = {
           enable = true;
           formatOnSave = true;
@@ -261,6 +301,7 @@
               enable_cursor_hijack = true;
               # custom options for enabling view of hidden files
               filesystem = {
+                hijack_netrw_behavior = "open_current";
                 filtered_items = {
                   visible = true;
                   hide_dotfiles = false;
@@ -283,11 +324,14 @@
           };
         };
 
-        treesitter.context = {
+        treesitter = {
           enable = true;
-          setupOpts = {
-            max_lines = 2;
-            mode = "cursor";
+          fold = true;
+          context = {
+            enable = true;
+            setupOpts = {
+              max_lines = 2;
+            };
           };
         };
 
@@ -349,16 +393,15 @@
             };
           };
         };
-
         ui = {
-          borders.enable = true;
+          borders.enable = false;
           noice.enable = true;
           colorizer.enable = true;
           modes-nvim.enable = false; # the theme looks terrible with catppuccin
           illuminate.enable = true;
           breadcrumbs = {
             enable = true;
-            navbuddy.enable = false;
+            navbuddy.enable = true;
           };
           smartcolumn = {
             enable = true;
