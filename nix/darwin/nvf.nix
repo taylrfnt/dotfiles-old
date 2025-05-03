@@ -241,7 +241,6 @@
             friendly-snippets.enable = true;
             setupOpts = {
               signature.enabled = true;
-              fuxxy.implementation = "lua";
             };
           };
           nvim-cmp = {
