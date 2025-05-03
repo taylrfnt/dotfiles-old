@@ -1,4 +1,3 @@
-
 _: {
   programs.nvf = {
     enable = true;
@@ -109,7 +108,7 @@ _: {
           lightbulb.enable = false;
           trouble.enable = true;
           # lsp-signature is replaced by blink.cmp
-          lspSignature.enable = true;
+          lspSignature.enable = false;
           otter-nvim.enable = true;
           nvim-docs-view.enable = true;
         };
@@ -224,7 +223,7 @@ _: {
         autocomplete = {
           # install currently fails due to vendored dependencies & SSL
           blink-cmp = {
-            enable = false;
+            enable = true;
             friendly-snippets.enable = true;
             setupOpts = {
               signature.enabled = true;
@@ -232,7 +231,7 @@ _: {
             };
           };
           nvim-cmp = {
-            enable = true;
+            enable = false;
             setupOpts = {
               view = {
                 entries = "native";
