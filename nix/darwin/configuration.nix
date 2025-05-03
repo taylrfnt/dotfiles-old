@@ -37,7 +37,8 @@
       pkgs.zsh-vi-mode
       pkgs.zsh-autosuggestions
       pkgs.ncurses
-      pkgs.neovim
+      # move to nvf
+      # pkgs.neovim
       pkgs.tmux
       pkgs.git
       pkgs.lazygit

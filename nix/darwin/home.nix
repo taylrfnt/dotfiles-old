@@ -15,7 +15,7 @@ in
 
   xdg = {
     enable = true;
-    configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/.config/nvim";
+    # configFile.nvim.source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/.config/nvim";
     configFile.ghostty.source = mkOutOfStoreSymlink "/Users/taylor/dotfiles/.config/ghostty";
   };
 
@@ -26,7 +26,7 @@ in
     ## and our generic modules 
     oh-my-posh = (import ../home/oh-my-posh/oh-my-posh.nix { inherit config pkgs lib; });
     tmux = (import ../home/tmux.nix { inherit config pkgs; });
-    neovim = (import ../home/neovim.nix { inherit config pkgs; });
+    # neovim = (import ../home/neovim.nix { inherit config pkgs; });
     kitty = (import ../home/kitty.nix { inherit config pkgs; });
     k9s = (import ../home/k9s/k9s.nix { inherit config pkgs; });
     yt-dlp = (import ../home/yt-dlp.nix { inherit config pkgs; });
