@@ -1,4 +1,4 @@
-_: {
+{pkgs, ...}: {
   programs.nvf = {
     enable = true;
     settings = {
@@ -119,8 +119,14 @@ _: {
           enableTreesitter = true;
           enableExtraDiagnostics = true;
 
-          nix.enable = true;
-          markdown.enable = true;
+          nix = {
+            enable = true;
+            format.enable = true;
+          };
+          markdown = {
+            enable = true;
+            extensions.render-markdown-nvim.enable = true;
+          };
           bash.enable = true;
           clang.enable = true;
           css.enable = true;
@@ -129,7 +135,15 @@ _: {
           java.enable = true;
           kotlin.enable = true;
           ts.enable = true;
-          go.enable = true;
+          go = {
+            enable = true;
+            format = {
+              enable = true;
+              package = pkgs.gofumpt;
+              type = "gofumpt";
+            };
+          };
+          helm.enable = true;
           lua.enable = true;
           zig.enable = true;
           python.enable = true;
