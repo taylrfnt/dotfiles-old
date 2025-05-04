@@ -31,7 +31,7 @@
             mode = "n";
             silent = true;
             # action = ":Neotree toggle<CR>";
-            action = ":NvimTree Toggle<CR>";
+            action = ":NvimTreeToggle<CR>";
             desc = "Toggle Explorer";
           }
           # This is a neo-tree mapping.  TODO: convert to nvimtree
