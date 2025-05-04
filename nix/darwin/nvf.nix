@@ -1,7 +1,7 @@
 ## TODO: add smart-splits.nvim (https://github.com/AstroNvim/AstroNvim/blob/170e9cd4bf7c17ec963141399f4b0a32aa694868/lua/astronvim/plugins/smart-splits.lua#L12)
 {
   pkgs,
-  # lib,
+  lib,
   ...
 }: {
   programs.nvf = {
@@ -116,26 +116,6 @@
           vim.opt.list = true
         '';
 
-        lazy.plugins = {
-          "nvim-lspconfig" = {
-            package = pkgs.vimPlugins.nvim-lspconfig;
-            setupModule = "lspconfig";
-            setupOpts = {
-              opts = {
-                diagnostics = {
-                  signs = {
-                    text = {
-                      "[vim.diagnostic.severity.ERROR]" = " ";
-                      "[vim.diagnostic.severity.WARN]" = " ";
-                      "[vim.diagnostic.severity.INFO]" = " ";
-                      "[vim.diagnostic.severity.HINT]" = "󰌵";
-                    };
-                  };
-                };
-              };
-            };
-          };
-        };
         lsp = {
           enable = true;
           formatOnSave = true;
@@ -201,6 +181,7 @@
           enable = true;
           config = {
             # this is supposed to work for neo-tree as well.  It does not right now, for some reason.
+            # if this starts to work, we can move to neo-tree instead of nvim-tree
             signs = {
               text = {
                 "vim.diagnostic.severity.ERROR" = " ";
@@ -296,7 +277,7 @@
 
         filetree = {
           neo-tree = {
-            enable = true;
+            enable = false;
             setupOpts = {
               enable_cursor_hijack = true;
               # custom options for enabling view of hidden files
@@ -305,6 +286,29 @@
                 filtered_items = {
                   visible = true;
                   hide_dotfiles = false;
+                };
+              };
+            };
+          };
+          nvimTree = {
+            enable = true;
+            mappings = {
+              toggle = "<leader>e";
+            };
+            setupOpts = {
+              # renderer = {
+              #   icons = {
+              #     git_placement = "right_align";
+              #     diagnostics_placement = "right_align";
+              #   };
+              # };
+              diagnostics = {
+                enable = true;
+                icons = {
+                  error = "";
+                  warning = "";
+                  info = "";
+                  hint = "󰌵";
                 };
               };
             };
