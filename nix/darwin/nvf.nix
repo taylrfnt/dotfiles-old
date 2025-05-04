@@ -30,25 +30,27 @@
             key = "<leader>e";
             mode = "n";
             silent = true;
-            action = ":Neotree toggle<CR>";
+            # action = ":Neotree toggle<CR>";
+            action = ":NvimTree Toggle<CR>";
             desc = "Toggle Explorer";
           }
-          {
-            key = "<leader>o";
-            mode = "n";
-            silent = true;
-            lua = true;
-            action = ''
-              function()
-                if vim.bo.filetype == "neo-tree" then
-                  vim.cmd.wincmd "p"
-                else
-                  vim.cmd.Neotree "focus"
-                end
-              end
-            '';
-            desc = "Toggle Explorer Focus";
-          }
+          # This is a neo-tree mapping.  TODO: convert to nvimtree
+          # {
+          #   key = "<leader>o";
+          #   mode = "n";
+          #   silent = true;
+          #   lua = true;
+          #   action = ''
+          #     function()
+          #       if vim.bo.filetype == "neo-tree" then
+          #         vim.cmd.wincmd "p"
+          #       else
+          #         vim.cmd.Neotree "focus"
+          #       end
+          #     end
+          #   '';
+          #   desc = "Toggle Explorer Focus";
+          # }
           # easy quit keymap
           {
             key = "<leader>q";
