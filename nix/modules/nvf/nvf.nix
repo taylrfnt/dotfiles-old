@@ -181,12 +181,12 @@
               toggle = "<leader>e";
             };
             setupOpts = {
-              # renderer = {
-              #   icons = {
-              #     git_placement = "right_align";
-              #     diagnostics_placement = "right_align";
-              #   };
-              # };
+              renderer = {
+                icons = {
+                  git_placement = "right_align";
+                  diagnostics_placement = "right_align";
+                };
+              };
               diagnostics = {
                 enable = true;
                 icons = {
