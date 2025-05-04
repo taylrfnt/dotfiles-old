@@ -1,7 +1,7 @@
 ## TODO: add smart-splits.nvim (https://github.com/AstroNvim/AstroNvim/blob/170e9cd4bf7c17ec963141399f4b0a32aa694868/lua/astronvim/plugins/smart-splits.lua#L12)
 {
   pkgs,
-  lib,
+  # lib,
   ...
 }: {
   programs.nvf = {
@@ -24,78 +24,7 @@
         # };
 
         # actual configs
-        keymaps = [
-          # NeoTree keymaps
-          {
-            key = "<leader>e";
-            mode = "n";
-            silent = true;
-            # action = ":Neotree toggle<CR>";
-            action = ":NvimTreeToggle<CR>";
-            desc = "Toggle Explorer";
-          }
-          # This is a neo-tree mapping.  TODO: convert to nvimtree
-          # {
-          #   key = "<leader>o";
-          #   mode = "n";
-          #   silent = true;
-          #   lua = true;
-          #   action = ''
-          #     function()
-          #       if vim.bo.filetype == "neo-tree" then
-          #         vim.cmd.wincmd "p"
-          #       else
-          #         vim.cmd.Neotree "focus"
-          #       end
-          #     end
-          #   '';
-          #   desc = "Toggle Explorer Focus";
-          # }
-          # easy quit keymap
-          {
-            key = "<leader>q";
-            mode = "n";
-            silent = true;
-            action = ":q<CR>";
-            desc = "Quit Current Window";
-          }
-          # ToggleTerm keymaps
-          {
-            key = "<leader>tf";
-            mode = "n";
-            silent = true;
-            action = ":ToggleTerm direction=float<CR>";
-            desc = "ToggleTerm float";
-          }
-          {
-            key = "<leader>th";
-            mode = "n";
-            silent = true;
-            action = ":ToggleTerm direction=horizontal<CR>";
-            desc = "ToggleTerm horizontal";
-          }
-          {
-            key = "<leader>tv";
-            mode = "n";
-            silent = true;
-            action = ":ToggleTerm direction=vertical<CR>";
-            desc = "ToggleTerm vertical";
-          }
-          {
-            key = "<leader>tl";
-            mode = "n";
-            silent = true;
-            action = ":TermExec direction=float cmd=lazygit<CR>";
-            desc = "ToggleTerm lazygit";
-          }
-          {
-            key = "<leader>tk";
-            mode = "n";
-            silent = true;
-            action = ":TermExec direction=float cmd=k9s<CR>";
-            desc = "ToggleTerm k9s";
-          }
-        ];
+        keymaps = import ./keymaps.nix;
 
         options = {
           tabstop = 2;
@@ -421,6 +350,36 @@
           };
           fastaction.enable = true;
         };
+
+        # load some custom plugins not in the nvf flake
+        extraPlugins = with pkgs.vimPlugins; {
+          smart-splits = {
+            setup = ''
+              require('smart-splits').setup({
+                resize_mode = {
+                  silent = true,
+                  hooks = {
+                    on_enter = function()
+                      vim.notify('Entering resize mode')
+                    end,
+                    on_leave = function()
+                      vim.notify('Exiting resize mode')
+                    end,
+                  },
+                },
+              })
+            '';
+            package = smart-splits-nvim;
+          };
+        };
+        # lazy.plugins = {
+        #   smart-splits = with pkgs.vimPlugins; {
+        #     package = smart-splits-nvim;
+        #     setupModule = "smart-splits";
+        #     setupOpts = {
+        #     };
+        #   };
+        # };
       };
     };
   };
