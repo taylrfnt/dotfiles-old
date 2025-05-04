@@ -1,4 +1,3 @@
-## TODO: add smart-splits.nvim (https://github.com/AstroNvim/AstroNvim/blob/170e9cd4bf7c17ec963141399f4b0a32aa694868/lua/astronvim/plugins/smart-splits.lua#L12)
 {
   pkgs,
   # lib,
@@ -17,15 +16,10 @@
         viAlias = false;
         vimAlias = true;
 
-        # highlight = {
-        #   CursorLineNr = {
-        #     fg = "#ccd0da";
-        #   };
-        # };
+        # keymaps
+        keymaps = import ./keymaps/default.nix;
 
-        # actual configs
-        keymaps = import ./keymaps.nix;
-
+        # vim options (vim.opt)
         options = {
           tabstop = 2;
           shiftwidth = 2;
@@ -34,6 +28,7 @@
           wrap = false;
         };
 
+        # custom lua to run at startup
         luaConfigPre = ''
           vim.opt.listchars = {
             multispace = "￮",
@@ -47,6 +42,7 @@
           vim.opt.list = true
         '';
 
+        # nvim lsp settings
         lsp = {
           enable = true;
           formatOnSave = true;
@@ -64,49 +60,8 @@
           nvim-docs-view.enable = true;
         };
 
-        languages = {
-          enableLSP = true;
-          enableFormat = true;
-          enableTreesitter = true;
-          enableExtraDiagnostics = true;
-
-          nix = {
-            enable = true;
-            format.enable = true;
-          };
-          markdown = {
-            enable = true;
-            extensions.render-markdown-nvim.enable = true;
-          };
-          bash.enable = true;
-          clang.enable = true;
-          css.enable = true;
-          html.enable = true;
-          sql.enable = true;
-          java.enable = true;
-          kotlin.enable = true;
-          ts.enable = true;
-          go = {
-            enable = true;
-            format = {
-              enable = true;
-              package = pkgs.gofumpt;
-              type = "gofumpt";
-            };
-          };
-          helm.enable = true;
-          lua.enable = true;
-          zig.enable = true;
-          python.enable = true;
-          typst.enable = true;
-          # this requires null-ls, which is not ideal.
-          rust = {
-            enable = true;
-            crates.enable = true;
-          };
-          # Nim LSP is broken on Darwin
-          nim.enable = false;
-        };
+        # language support
+        languages = import ./languages/default.nix {inherit pkgs;};
 
         diagnostics = {
           enable = true;
@@ -123,7 +78,6 @@
             };
             update_in_insert = true;
             virtual_lines = true;
-            #virtual_text = true;
           };
         };
 
@@ -329,10 +283,8 @@
           };
         };
         ui = {
-          borders.enable = false;
           noice.enable = true;
           colorizer.enable = true;
-          modes-nvim.enable = false; # the theme looks terrible with catppuccin
           illuminate.enable = true;
           breadcrumbs = {
             enable = true;
@@ -352,34 +304,7 @@
         };
 
         # load some custom plugins not in the nvf flake
-        extraPlugins = with pkgs.vimPlugins; {
-          smart-splits = {
-            setup = ''
-              require('smart-splits').setup({
-                resize_mode = {
-                  silent = true,
-                  hooks = {
-                    on_enter = function()
-                      vim.notify('Entering resize mode')
-                    end,
-                    on_leave = function()
-                      vim.notify('Exiting resize mode')
-                    end,
-                  },
-                },
-              })
-            '';
-            package = smart-splits-nvim;
-          };
-        };
-        # lazy.plugins = {
-        #   smart-splits = with pkgs.vimPlugins; {
-        #     package = smart-splits-nvim;
-        #     setupModule = "smart-splits";
-        #     setupOpts = {
-        #     };
-        #   };
-        # };
+        extraPlugins = import ./plugins/default.nix {inherit pkgs;};
       };
     };
   };

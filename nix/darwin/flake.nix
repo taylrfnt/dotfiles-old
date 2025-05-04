@@ -39,7 +39,7 @@
       modules = [
         ./configuration.nix
         nvf.nixosModules.default
-        ./nvf/nvf.nix
+        ../modules/nvf/nvf.nix
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
