@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This repo is now archived - I have moved to a flake-native management of my configurations that works across systems. 
+
 # What is this Repository?
 This repository is a one-stop-shop for all of my dotfiles (aka system configuration) for the various machines I use.
 All of my system configurations are declarative, using [Nix](https://nixos.org/download/).
